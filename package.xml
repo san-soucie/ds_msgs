@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>dsl_msgs</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>Standard DSL messages including common types for various core DSL functionality.  Pretty much every DSL and vehicle-specific package will ultimately depend on this.  To keep the dependency tree cycle-free, this must have very few dependencies.  Think long and hard before adding any.</description>
 
   <maintainer email="ivaughn@whoi.edu">Ian Vaughn</maintainer>
@@ -20,10 +20,12 @@
   <doc_depend>doxygen</doc_depend>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
   <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- Other tools can request additional information be placed here -->
+    <architecture_independent/>
   </export>
 </package>
