@@ -43,8 +43,8 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Ian Vaughn** - *Initial work* - [WHOI email](ivaughn@whoi.edu)
-* **Stefano Suman** - *Initial work* - [WHOI email](ssuman@whoi.edu)
+* **Ian Vaughn** - *Initial work* - [WHOI email](mailto://ivaughn@whoi.edu)
+* **Stefano Suman** - *Initial work* - [WHOI email](mailto://ssuman@whoi.edu)
 
 ## Acknowledgments
 
