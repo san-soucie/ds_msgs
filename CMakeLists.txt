@@ -33,11 +33,22 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+   DIRECTORY dsl_core_msgs
+   FILES
+   status.msg
+   diag_attribute.msg
+   diag.msg
+)
+
+add_message_files(
+   DIRECTORY dsl_actuator_msgs
+   FILES
+   servo_cmd.msg
+   servo_state.msg
+   thruster_cmd.msg
+   thruster_state.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -61,13 +72,5 @@ generate_messages(
 
 ###################################
 catkin_package(
-  INCLUDE_DIRS include
   CATKIN_DEPENDS message_runtime std_msgs
-)
-
-## Mark cpp header files for installation
-install(DIRECTORY include/${PROJECT_NAME}/
-   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-   FILES_MATCHING PATTERN "*.h"
-   PATTERN ".svn" EXCLUDE
 )
