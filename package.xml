@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>dsl_msgs</name>
+  <name>ds_msgs</name>
   <version>0.0.1</version>
   <description>Standard DSL messages including common types for various core DSL functionality.  Pretty much every DSL and vehicle-specific package will ultimately depend on this.  To keep the dependency tree cycle-free, this must have very few dependencies.  Think long and hard before adding any.</description>
 
@@ -9,7 +9,7 @@
   <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
   <license>TODO</license>
 
-  <url type="repository">https://bitbucket.org/whoidsl/dsl_msgs</url> -->
+  <url type="repository">https://bitbucket.org/whoidsl/ds_msgs</url> -->
 
   <author email="ssuman@whoi.edu">Stefano Suman</author>
   <author email="zberkowitz@whoi.edu">Zac Berkowitzh</author>

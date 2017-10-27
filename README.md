@@ -1,4 +1,4 @@
-# dsl_msgs
+# ds_msgs
 
 This is a catch-all package for common vehicle-independent message types.  
 This package should contain only ROS ```msg``` and ```srv``` files.
@@ -11,7 +11,7 @@ or image interpretation or whatever should live elsewhere.
 
 * Core component messages (control, etc)
 * Common data messages
-* Messages for dsl_diagnostic
+* Messages for ds_diagnostic
 * Messages for the JasonTalk wrapper
 
 ## Getting Started
