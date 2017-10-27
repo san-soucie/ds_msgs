@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(dsl_msgs)
+project(ds_msgs)
 
 add_compile_options(-std=c++11)
 
@@ -34,20 +34,22 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-   DIRECTORY dsl_core_msgs
+   DIRECTORY ds_core_msgs
    FILES
-   status.msg
-   diag_attribute.msg
-   diag.msg
+   Status.msg
+   DsDataHeader.msg
+   KeyDouble.msg
+   KeyString.msg
+   Diag.msg
 )
 
 add_message_files(
-   DIRECTORY dsl_actuator_msgs
+   DIRECTORY ds_actuator_msgs
    FILES
-   servo_cmd.msg
-   servo_state.msg
-   thruster_cmd.msg
-   thruster_state.msg
+   ServoCmd.msg
+   ServoState.msg
+   ThrusterCmd.msg
+   ThrusterState.msg
 )
 
 ## Generate services in the 'srv' folder
