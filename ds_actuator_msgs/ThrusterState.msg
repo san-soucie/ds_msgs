@@ -1,7 +1,7 @@
 time stamp
-string servo_name
+string thruster_name
 
-float32 cmd
-float32 actual
+float32 cmd_value
+float32 actual_value
 
 # Other status fields go here

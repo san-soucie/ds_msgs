@@ -41,6 +41,7 @@ add_message_files(
    KeyDouble.msg
    KeyString.msg
    Diag.msg
+   Abort.msg
 )
 
 add_message_files(
@@ -50,14 +51,17 @@ add_message_files(
    ServoState.msg
    ThrusterCmd.msg
    ThrusterState.msg
+   XrState.msg
+   XrSimState.msg
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+    DIRECTORY srv
+   FILES
+   XrCmd.srv
+   VoidCmd.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
