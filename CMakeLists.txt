@@ -5,6 +5,7 @@ add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
     std_msgs
+    geometry_msgs
     message_generation
 )
 
@@ -34,33 +35,45 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-   DIRECTORY ds_core_msgs
-   FILES
-   Status.msg
-   DsDataHeader.msg
-   KeyDouble.msg
-   KeyString.msg
-   Diag.msg
-   Abort.msg
+    DIRECTORY ds_core_msgs
+    FILES
+    Status.msg
+    DsDataHeader.msg
+    KeyDouble.msg
+    KeyString.msg
+    Diag.msg
+    Abort.msg
 )
 
 add_message_files(
-   DIRECTORY ds_actuator_msgs
-   FILES
-   ServoCmd.msg
-   ServoState.msg
-   ThrusterCmd.msg
-   ThrusterState.msg
-   XrState.msg
-   XrSimState.msg
+    DIRECTORY ds_actuator_msgs
+    FILES
+    ServoCmd.msg
+    ServoState.msg
+    ThrusterCmd.msg
+    ThrusterState.msg
+    XrState.msg
+    XrSimState.msg
 )
+
+add_message_files(
+    DIRECTORY ds_sensor_msgs
+    FILES
+    CtdData.msg
+    DepthData.msg
+    DvlData.msg
+    MruData.msg
+    SensorId.msg
+    SoundVelocityTypeEnum.msg
+    SvpData.msg
+)   
 
 ## Generate services in the 'srv' folder
 add_service_files(
     DIRECTORY srv
-   FILES
-   XrCmd.srv
-   VoidCmd.srv
+    FILES
+    XrCmd.srv
+    VoidCmd.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -74,9 +87,10 @@ add_service_files(
 generate_messages(
    DEPENDENCIES
    std_msgs
+   geometry_msgs
 )
 
 ###################################
 catkin_package(
-  CATKIN_DEPENDS message_runtime std_msgs
+  CATKIN_DEPENDS message_runtime std_msgs geometry_msgs
 )
