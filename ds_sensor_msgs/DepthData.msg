@@ -1,6 +1,3 @@
-int8 SV_METHOD_UNKNOWN=0
-int8 SV_METHOD_DIRECT=1  # Direct measurement
-
 Header header
 SensorId sensor
 
