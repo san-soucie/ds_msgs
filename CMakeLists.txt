@@ -62,7 +62,7 @@ add_message_files(
     CtdData.msg
     DepthData.msg
     DvlData.msg
-    MruData.msg
+    InsData.msg
     SensorId.msg
     SoundVelocityTypeEnum.msg
     SvpData.msg
