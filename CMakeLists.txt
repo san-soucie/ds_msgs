@@ -60,6 +60,7 @@ add_message_files(
     DIRECTORY ds_sensor_msgs
     FILES
     ByteSequence.msg
+    Ctd.msg
     CtdData.msg
     DepthData.msg
     DvlData.msg
