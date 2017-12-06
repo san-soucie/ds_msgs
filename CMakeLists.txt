@@ -59,6 +59,7 @@ add_message_files(
 add_message_files(
     DIRECTORY ds_sensor_msgs
     FILES
+    ByteSequence.msg
     CtdData.msg
     DepthData.msg
     DvlData.msg
