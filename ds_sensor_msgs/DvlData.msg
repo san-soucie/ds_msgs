@@ -19,6 +19,7 @@ geometry_msgs/Vector3 velocity
 # row-major, xyz axes.  Set to "-1" if not known.
 float64[9] velocity_covar
 
+
 uint8 num_good_beams
 
 # Speed of sound (m/s) used by the DVL
@@ -26,6 +27,7 @@ float32 speed_sound
 
 #####################################################################
 # Raw data
+geometry_msgs/Vector3[4] beam_unit_vec
 float32[4] range
 float32[4] range_covar
 
