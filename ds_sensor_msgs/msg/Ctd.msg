@@ -1,3 +1,5 @@
+float32 CTD_NO_DATA=-9999.0
+
 std_msgs/Header header
 
 # Conductivity in S/m
