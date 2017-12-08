@@ -61,6 +61,7 @@ add_message_files(
       SensorId.msg
       SoundVelocityTypeEnum.msg
       SvpData.msg
+      VectorMagneticField.msg
 )
 
 ## Generate services in the 'srv' folder
