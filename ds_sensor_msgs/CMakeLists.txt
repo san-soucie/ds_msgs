@@ -55,6 +55,7 @@ add_message_files(
       Ctd.msg
       CtdData.msg
       DepthData.msg
+      DepthPressure.msg
       DvlData.msg
       InsData.msg
       MruData.msg
