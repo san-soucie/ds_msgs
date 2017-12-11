@@ -59,6 +59,7 @@ add_message_files(
       DvlData.msg
       InsData.msg
       MruData.msg
+      OxygenConcentration.msg
       SensorId.msg
       SoundVelocityTypeEnum.msg
       SvpData.msg
