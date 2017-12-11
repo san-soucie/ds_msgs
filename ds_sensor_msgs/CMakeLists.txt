@@ -62,6 +62,7 @@ add_message_files(
       SensorId.msg
       SoundVelocityTypeEnum.msg
       SvpData.msg
+      SoundSpeed.msg
       VectorMagneticField.msg
 )
 
