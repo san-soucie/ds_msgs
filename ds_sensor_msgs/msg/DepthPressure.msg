@@ -3,7 +3,6 @@
 float32 DEPTH_PRESSURE_NO_DATA=-9999.0
 
 # Pressure unit is user defined
-uint8 UNIT_PRESSURE_USER=0
 uint8 UNIT_PRESSURE_PSI=1
 uint8 UNIT_PRESSURE_HPA=2
 uint8 UNIT_PRESSURE_BAR=3
