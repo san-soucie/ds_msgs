@@ -55,12 +55,16 @@ add_message_files(
       Ctd.msg
       CtdData.msg
       DepthData.msg
+      DepthPressure.msg
       DvlData.msg
       InsData.msg
       MruData.msg
+      OxygenConcentration.msg
       SensorId.msg
       SoundVelocityTypeEnum.msg
       SvpData.msg
+      SoundSpeed.msg
+      VectorMagneticField.msg
 )
 
 ## Generate services in the 'srv' folder
