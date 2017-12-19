@@ -54,6 +54,7 @@ add_message_files(
     KeyDouble.msg
     KeyString.msg
     Status.msg
+    RawData.msg
 )
 
 ## Generate services in the 'srv' folder
