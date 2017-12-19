@@ -24,12 +24,12 @@ string channel_environment
 int8 rdidvl_sensor_number
 int8 pd_mode
 
-boolean tx_udp
+bool tx_udp
 # True if the dvl driver also broadcasts hex ascii on UDP
 string  tx_udp_address
 int32 tx_udp_port
 
-float64 position[6]
+float64[6] position
 
 ###dsldevice.device_conn_t connection
 

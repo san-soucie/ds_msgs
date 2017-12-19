@@ -51,11 +51,13 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   DIRECTORY msg
   FILES
+      AcousticCurrentProfile.msg
       ByteSequence.msg
       Ctd.msg
       CtdData.msg
       DepthData.msg
       DepthPressure.msg
+      DopplerVelocity.msg
       DvlData.msg
       InsData.msg
       MruData.msg
