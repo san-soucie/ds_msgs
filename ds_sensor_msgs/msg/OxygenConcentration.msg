@@ -1,6 +1,6 @@
 float32 OXYGEN_CONCENTRATION_NO_DATA=-9999.00
 
-std_msgs/Header header
+ds_core_msgs/DsDataHeader header
 
 # O2 concentration in uM
 float32 concentration

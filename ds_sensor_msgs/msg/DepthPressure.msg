@@ -14,7 +14,7 @@ uint8 UNIT_PRESSURE_MH20=8
 
 float32 DEFAULT_LATITUDE=35.0
 
-std_msgs/Header header
+ds_core_msgs/DsDataHeader header
 
 # Tared pressure value.
 # If 'tare' != DEPTH_PESSURE_NO_DATA, then this value is equal to "raw_pressure - tare"

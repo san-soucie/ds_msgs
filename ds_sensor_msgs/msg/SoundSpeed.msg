@@ -1,6 +1,6 @@
 float32 NO_SOUND_SPEED_DATA=-9999.0
 
-std_msgs/Header header
+ds_core_msgs/DsDataHeader header
 
 # Speed in m/s
 float32 speed

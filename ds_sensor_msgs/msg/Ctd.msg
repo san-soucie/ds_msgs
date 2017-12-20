@@ -1,6 +1,6 @@
 float32 CTD_NO_DATA=-9999.0
 
-std_msgs/Header header
+ds_core_msgs/DsDataHeader header
 
 # Conductivity in S/m
 float32 conductivity
