@@ -8,7 +8,7 @@ uint8 DVL_COORD_INSTRUMENT=1
 uint8 DVL_COORD_SHIP=2
 uint8 DVL_COORD_EARTH=3
 
-Header header
+ds_core_msgs/DsDataHeader header
 SensorId sensor
 
 

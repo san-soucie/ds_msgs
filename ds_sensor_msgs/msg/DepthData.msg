@@ -1,4 +1,4 @@
-Header header
+ds_core_msgs/DsDataHeader header
 SensorId sensor
 
 # Depth, in meters, based on our "best-guess" estimate
