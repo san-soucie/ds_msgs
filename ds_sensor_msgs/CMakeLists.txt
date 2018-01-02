@@ -55,7 +55,6 @@ add_message_files(
       AcousticCurrentProfile.msg
       Ctd.msg
       DepthPressure.msg
-      DopplerVelocity.msg
       Dvl.msg
       RdiPD0.msg
       Ins.msg
