@@ -53,18 +53,12 @@ add_message_files(
   DIRECTORY msg
   FILES
       AcousticCurrentProfile.msg
-      ByteSequence.msg
       Ctd.msg
-      CtdData.msg
-      DepthData.msg
       DepthPressure.msg
       DopplerVelocity.msg
       DvlData.msg
-      InsData.msg
+      Ins.msg
       OxygenConcentration.msg
-      SensorId.msg
-      SoundVelocityTypeEnum.msg
-      SvpData.msg
       SoundSpeed.msg
       VectorMagneticField.msg
 )

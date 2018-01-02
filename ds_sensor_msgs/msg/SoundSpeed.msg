@@ -7,4 +7,27 @@ std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
 # Speed in m/s
-float32 speed
+float64 speed
+float64 speed_covar
+
+# Enum to represent the source of a sound velocity measurement
+# If you have a choice of method, Chen-Millero is probably a good
+# bet for anything CTD-cast related.
+
+# Unknown.  Don't use this.
+uint8 SV_METHOD_UNKNOWN=0
+
+# Direct measurement.  Usually via a Sound Velocity Probe that shoots actual sound
+uint8 SV_METHOD_DIRECT=1
+
+# Chen-Millero algorithm best for depth < 1000m
+uint8 SV_METHOD_CHEN_MILLERO=2
+
+# The Del Grosso algorithm best for depth > 1000m
+uint8 SV_METHOD_DEL_GROSSO=3
+
+# User defined method.
+uint8 SV_METHOD_USER_DEFINED=4
+
+uint8 speed_method
+
