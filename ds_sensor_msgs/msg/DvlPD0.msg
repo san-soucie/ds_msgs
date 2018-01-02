@@ -1,10 +1,10 @@
 ds_core_msgs/DsDataHeader header
 SensorId sensor
 
-
-#dvl fixed leader
-uint8 fw_ver
-#TODO: IMPORTANT-->DVLDATA
+####################
+# DVL fixed leader #
+####################
+uint8 fw_ver #TODO: IMPORTANT-->DVLDATA
 uint8 fw_rev
 uint32 config_khz
 #75, 150, 300, or 600
@@ -23,8 +23,7 @@ uint8 config_janus
 uint8 real_sim
 #0=real is default
 uint8 lag
-uint8 beams
-#TODO: IMPORTANT-->DVLDATA
+uint8 beams #TODO: IMPORTANT-->DVLDATA
 uint8 cells
 uint8 pings
 uint8 cell_depth
@@ -59,31 +58,27 @@ uint8 avg_start
 uint8 avg_end
 uint8 avg_false_thresh
 uint16 trans_lag_dist
-uint64 serial_num_cpu
-#TODO: IMPORTANT-->DVLDATA
+uint64 serial_num_cpu #TODO: IMPORTANT-->DVLDATA
 uint16 wb_cmd
 #range 0 to 1
 uint8 power
-uint32 serial_num
-#TODO: IMPORTANT-->DVLDATA
+uint32 serial_num #TODO: IMPORTANT-->DVLDATA
 uint8 beam_angle
 
 
-#
-#DVL variable leader
+#######################
+# DVL variable leader #
+#######################
 uint32 ensemble_num
-#uint8 ensemble_num_msb
 
-time rtc_time
-#Real-time clock for current data ensemble
-#TODO: IMPORTANT-->DVLDATA
+uint8 BIT
+
+time rtc_time #Real-time clock for current data ensemble #TODO: IMPORTANT-->DVLDATA
 bool error_demod1
 #flags from bit result
 bool error_demod0
 bool error_timingcard
-uint32 sound_vel
-#ec --> m/s
-#TODO: IMPORTANT-->DVLDATA
+uint32 sound_vel #ec --> m/s #TODO: IMPORTANT-->DVLDATA
 float64 depth
 #ed --> m
 float64 heading
@@ -140,8 +135,9 @@ time y2k_time
 #TODO: IMPORTANT-->DVLDATA
 
 
-#
-#DVL bottom track
+####################
+# DVL bottom track #
+####################
 uint16 pings_per_ensemble
 uint16 delay
 uint8 corr_mag_min
