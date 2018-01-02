@@ -60,6 +60,7 @@ add_message_files(
       DepthPressure.msg
       DopplerVelocity.msg
       DvlData.msg
+      DvlPD0.msg
       InsData.msg
       MruData.msg
       OxygenConcentration.msg
