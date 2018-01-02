@@ -56,8 +56,8 @@ add_message_files(
       Ctd.msg
       DepthPressure.msg
       DopplerVelocity.msg
-      DvlData.msg
-      DvlPD0.msg
+      Dvl.msg
+      RdiPD0.msg
       Ins.msg
       OxygenConcentration.msg
       SoundSpeed.msg

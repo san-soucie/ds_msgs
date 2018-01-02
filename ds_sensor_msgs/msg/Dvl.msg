@@ -42,7 +42,7 @@ float32[4] raw_velocity_covar
 uint8 velocity_mode
 
 # Coordinate system mode (see above)
-uint8 coordinate_mode #added by jvaccaro
+uint8 coordinate_mode
 
 #####################################################################
 # Debug data
