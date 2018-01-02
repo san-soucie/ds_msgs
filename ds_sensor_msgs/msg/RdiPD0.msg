@@ -46,9 +46,9 @@ uint8 coord_mode
 bool coord_tilts
 bool coord_3beam
 bool coord_binmapping
-uint16 hdng_align
+float64 hdng_align
 #ea-command
-uint16 hdng_bias
+float64 hdng_bias
 #eb-command
 uint8 sensor_src
 #ez-command
@@ -56,11 +56,11 @@ uint8 sensor_avail
 #same as sensor_src pattern
 float32 bin1_dist
 #-->m
-uint16 xmit_pulse_len
+float32 xmit_pulse_len
 uint8 avg_start
 uint8 avg_end
-uint8 avg_false_thresh
-uint16 trans_lag_dist
+float32 avg_false_thresh
+float32 trans_lag_dist
 uint64 serial_num_cpu #TODO: IMPORTANT-->DVLDATA
 uint16 wb_cmd
 #range 0 to 1
@@ -97,7 +97,7 @@ float64 temperature
 
 duration mpt_wait
 #Minimum prep-ping waiting time
-uint8 heading_std
+float64 heading_std
 #standard deviations
 float64 pitch_std
 float64 roll_std
