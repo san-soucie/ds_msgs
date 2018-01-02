@@ -1,5 +1,5 @@
-ds_core_msgs/DsDataHeader header
-SensorId sensor
+std_msgs/Header header
+ds_core_msgs/DsHeader ds_header
 
 ####################
 # DVL fixed leader #
