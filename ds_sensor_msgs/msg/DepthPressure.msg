@@ -9,17 +9,20 @@ ds_core_msgs/DsHeader ds_header
 float64 DEPTH_PRESSURE_NO_DATA=-9999.0
 
 # Pressure unit for raw pressure value.
-uint8 UNIT_PRESSURE_PSI=1
-uint8 UNIT_PRESSURE_HPA=2
-uint8 UNIT_PRESSURE_BAR=3
-uint8 UNIT_PRESSURE_KPA=4
-uint8 UNIT_PRESSURE_MPA=5
-uint8 UNIT_PRESSURE_INHG=6
-uint8 UNIT_PRESSURE_MMHG=7
-uint8 UNIT_PRESSURE_MH20=8
+
 # Pressure unit is user defined - need external knowledge of
 # conversion factor to decibar.
-uint8 UNIT_PRESSURE_USER_DEFINED=9
+uint8 UNIT_PRESSURE_USER_DEFINED=0
+# Standard units
+uint8 UNIT_PRESSURE_PSI         = 1
+uint8 UNIT_PRESSURE_DBAR        = 2
+uint8 UNIT_PRESSURE_HPA         = 3
+uint8 UNIT_PRESSURE_BAR         = 4
+uint8 UNIT_PRESSURE_KPA         = 5
+uint8 UNIT_PRESSURE_MPA         = 6
+uint8 UNIT_PRESSURE_INHG        = 7
+uint8 UNIT_PRESSURE_MMHG        = 8
+uint8 UNIT_PRESSURE_MH20        = 9
 
 float64 DEFAULT_LATITUDE=35.0
 
