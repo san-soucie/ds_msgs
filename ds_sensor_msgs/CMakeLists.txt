@@ -61,7 +61,6 @@ add_message_files(
       DopplerVelocity.msg
       DvlData.msg
       InsData.msg
-      MruData.msg
       OxygenConcentration.msg
       SensorId.msg
       SoundVelocityTypeEnum.msg

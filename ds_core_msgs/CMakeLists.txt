@@ -50,7 +50,7 @@ add_message_files(
   FILES
     Abort.msg
     Diag.msg
-    DsDataHeader.msg
+    DsHeader.msg
     KeyDouble.msg
     KeyString.msg
     Status.msg

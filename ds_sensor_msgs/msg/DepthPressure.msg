@@ -1,3 +1,9 @@
+# The standard 2-part DsHeader block
+# This allows both a standard ROS header and DS-specific header blocks
+# See HEADERS.md in ds_core_msgs for details
+std_msgs/Header header
+ds_core_msgs/DsHeader ds_header
+
 # Pressure unit constants
 
 float32 DEPTH_PRESSURE_NO_DATA=-9999.0
@@ -13,8 +19,6 @@ uint8 UNIT_PRESSURE_MMHG=7
 uint8 UNIT_PRESSURE_MH20=8
 
 float32 DEFAULT_LATITUDE=35.0
-
-ds_core_msgs/DsDataHeader header
 
 # Tared pressure value.
 # If 'tare' != DEPTH_PESSURE_NO_DATA, then this value is equal to "raw_pressure - tare"

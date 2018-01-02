@@ -1,8 +1,11 @@
 # Message for an Inertial Navigation System 
 # operating not-quite in INS mode
 
-Header header
-SensorId sensor
+# The standard 2-part DsHeader block
+# This allows both a standard ROS header and DS-specific header blocks
+# See HEADERS.md in ds_core_msgs for details
+std_msgs/Header header
+ds_core_msgs/DsHeader ds_header
 
 # In degrees.  For humans.
 # Follows Fossen N-E-D notation
