@@ -108,7 +108,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ds_core_msgs
-   CATKIN_DEPENDS message_generation
+   CATKIN_DEPENDS message_generation ds_core_msgs
 #  DEPENDS system_lib
 )
 
