@@ -4,6 +4,14 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+#################
+# DVL processed #
+#################
+
+float64 altitude_sum
+float64 speed_gnd
+float64 course_gnd
+
 ####################
 # DVL fixed leader #
 ####################
@@ -120,9 +128,9 @@ uint8 eval_amp_min
 uint8 percent_good_min
 uint8 mode              #TODO: IMPORTANT-->DVLDATA
 uint32 err_vel_max
-uint32[4] range         #TODO: IMPORTANT-->DVLDATA
-uint32[4] velocity      #TODO: IMPORTANT-->DVLDATA
-uint32[4] correlation   #TODO: IMPORTANT-->DVLDATA
+float32[4] range         #TODO: IMPORTANT-->DVLDATA
+float32[4] velocity      #TODO: IMPORTANT-->DVLDATA
+float32[4] correlation   #TODO: IMPORTANT-->DVLDATA
 uint8[4] eval_amp
 uint8[4] percent_good   #TODO: IMPORTANT-->DVLDATA
 uint32 ref_min

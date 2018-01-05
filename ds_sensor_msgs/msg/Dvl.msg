@@ -13,6 +13,7 @@ uint8 DVL_COORD_EARTH=3
 # See HEADERS.md in ds_core_msgs for details
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
+float64 dvl_time
 
 #####################################################################
 # Velocities [m/s]
@@ -20,6 +21,10 @@ geometry_msgs/Vector3 velocity
 
 # row-major, xyz axes.  Set to "-1" if not known.
 float64[9] velocity_covar
+
+float64 altitude
+float64 course_gnd
+float64 speed_gnd
 
 uint8 num_good_beams
 
