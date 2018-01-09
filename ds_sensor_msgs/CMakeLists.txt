@@ -61,6 +61,7 @@ add_message_files(
       OxygenConcentration.msg
       SoundSpeed.msg
       VectorMagneticField.msg
+      PhinsStandard.msg
 )
 
 ## Generate services in the 'srv' folder
