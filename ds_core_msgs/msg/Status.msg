@@ -6,3 +6,6 @@ uint8 STATUS_ERROR = 2
 
 # Status Indicator
 uint8 status
+
+# Human-readable name of sender
+string descriptive_name
