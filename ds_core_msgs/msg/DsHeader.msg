@@ -17,5 +17,5 @@
 time io_time
 
 # Sensor source UUID
-uint64[2] source_uuid
+uint8[16] source_uuid
 
