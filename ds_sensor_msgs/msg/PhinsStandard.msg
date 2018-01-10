@@ -4,18 +4,24 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+# Attiutde in DEGREES
 float64 heading_deg
 float64 pitch_deg
 float64 roll_deg
 
+# Position in DEGREES
 float64 latitude_deg
 float64 longitude_deg
+
+# Altitude in meters
 float64 altitude_m
 
+# Speed in meters/second
 float64 east_speed_m_s
 float64 north_speed_m_s
 float64 up_speed_m_s
 
+# UTM zone information
 uint8 lat_utm_zone           # This is a char
 uint8 lon_utm_zone
 float64 utm_east_pos_m
