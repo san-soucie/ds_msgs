@@ -1,9 +1,9 @@
-#include "ds_nmea_msgs/util.h"
+#include "ds_nmea_parsers/parsers.h"
 
 #include <list>
 #include <gtest/gtest.h>
 
-TEST(PIXSE_STDSPD, valid_strings)
+TEST(PIXSE_UTMWGS, valid_strings)
 {
 
   auto gen = [](double east, double north, double vert, uint8_t checksum) {
@@ -17,7 +17,7 @@ TEST(PIXSE_STDSPD, valid_strings)
 
   const auto test_pairs =
       std::list<std::pair<std::string, ds_nmea_msgs::PixseStdspd>>{
-          {"$PIXSE,STDSPD,0.013,0.013,0.095*71\r\n", gen(0.013, 0.013, 0.095, 0x71)}
+          {"$PIXSE,UTMWGS,0.013,0.013,0.095*71\r\n", gen(0.013, 0.013, 0.095, 0x71)}
       };
 
   // Loop through all provided cases

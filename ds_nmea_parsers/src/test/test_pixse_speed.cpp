@@ -1,13 +1,13 @@
-#include "ds_nmea_msgs/util.h"
+#include "ds_nmea_parsers/parsers.h"
 
 #include <list>
 #include <gtest/gtest.h>
 
-TEST(PIXSE_UTMWGS, valid_strings)
+TEST(PIXSE_SPEED, valid_strings)
 {
 
   auto gen = [](double east, double north, double vert, uint8_t checksum) {
-    auto msg = ds_nmea_msgs::PixseStdspd{};
+    auto msg = ds_nmea_msgs::PixseSpeed{};
     msg.east = east;
     msg.north = north;
     msg.vertical = vert;
@@ -16,14 +16,15 @@ TEST(PIXSE_UTMWGS, valid_strings)
   };
 
   const auto test_pairs =
-      std::list<std::pair<std::string, ds_nmea_msgs::PixseStdspd>>{
-          {"$PIXSE,UTMWGS,0.013,0.013,0.095*71\r\n", gen(0.013, 0.013, 0.095, 0x71)}
+      std::list<std::pair<std::string, ds_nmea_msgs::PixseSpeed>>{
+          {"$PIXSE,SPEED_,-0.068,0.046,0.009*49", gen(-0.68, 0.046, 0.009, 0x49)},
+          {"$PIXSE,SPEED_,0.000,0.000,0.284*77\r\n", gen(0, 0, 0.284, 0x77)}
       };
 
   // Loop through all provided cases
   for (const auto& test_pair : test_pairs)
   {
-    auto msg = ds_nmea_msgs::PixseStdspd{};
+    auto msg = ds_nmea_msgs::PixseSpeed{};
     auto expected = test_pair.second;
     const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
 

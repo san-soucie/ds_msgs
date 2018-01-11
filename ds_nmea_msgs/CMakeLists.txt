@@ -2,14 +2,13 @@ cmake_minimum_required(VERSION 2.8.3)
 project(ds_nmea_msgs)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+# add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
         message_generation
-        roscpp
         )
 
 ## System dependencies are found with CMake's conventions
@@ -113,9 +112,9 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-   INCLUDE_DIRS include
-   LIBRARIES ds_nmea_msgs
-   CATKIN_DEPENDS message_generation roscpp
+#  INCLUDE_DIRS include
+#  LIBRARIES ds_nmea_msgs
+   CATKIN_DEPENDS message_generation
 #  DEPENDS system_lib
 )
 
@@ -125,27 +124,27 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
+# include_directories(
+#   include
+#   ${catkin_INCLUDE_DIRS}
+# )
 
 ## Declare a C++ library
-add_library(${PROJECT_NAME}
-  include/${PROJECT_NAME}/util.h
-  src/${PROJECT_NAME}/util.cpp
-)
+# add_library(${PROJECT_NAME}
+#   include/${PROJECT_NAME}/util.h
+#   src/${PROJECT_NAME}/util.cpp
+# )
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 
-target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES}
-)
+# target_link_libraries(${PROJECT_NAME}
+#   ${catkin_LIBRARIES}
+# )
 
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
@@ -182,24 +181,23 @@ target_link_libraries(${PROJECT_NAME}
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS ${PROJECT_NAME}
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# install(TARGETS ${PROJECT_NAME}
+#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark cpp header files for installation
-install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h"
-  PATTERN ".svn" EXCLUDE
-)
+# install(DIRECTORY include/${PROJECT_NAME}/
+#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#   FILES_MATCHING PATTERN "*.h"
+#   PATTERN ".svn" EXCLUDE
+# )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#   include/ds_nmea_parsers/util.h
+#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 # )
 
 #############
@@ -211,40 +209,5 @@ install(DIRECTORY include/${PROJECT_NAME}/
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
-catkin_add_gtest(test_hehdt src/test/test_hehdt.cpp)
-target_link_libraries(test_hehdt ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
-target_link_libraries(test_pixse_atitud ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_positi src/test/test_pixse_positi.cpp)
-target_link_libraries(test_pixse_positi ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_algsts src/test/test_pixse_algsts.cpp)
-target_link_libraries(test_pixse_algsts ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_htsts src/test/test_pixse_htsts.cpp)
-target_link_libraries(test_pixse_htsts ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_status src/test/test_pixse_status.cpp)
-target_link_libraries(test_pixse_status ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_heave src/test/test_pixse_heave.cpp)
-target_link_libraries(test_pixse_heave ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_speed src/test/test_pixse_speed.cpp)
-target_link_libraries(test_pixse_speed ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_stdspd src/test/test_pixse_stdspd.cpp)
-target_link_libraries(test_pixse_stdspd ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_stdpos src/test/test_pixse_stdpos.cpp)
-target_link_libraries(test_pixse_stdpos ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_stdhrp src/test/test_pixse_stdhrp.cpp)
-target_link_libraries(test_pixse_stdhrp ${PROJECT_NAME})
-
-catkin_add_gtest(test_pixse_utmwgs src/test/test_pixse_utmwgs.cpp)
-target_link_libraries(test_pixse_utmwgs ${PROJECT_NAME})
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

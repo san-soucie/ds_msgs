@@ -1,13 +1,13 @@
-#include "ds_nmea_msgs/util.h"
+#include "ds_nmea_parsers/parsers.h"
 
 #include <list>
 #include <gtest/gtest.h>
 
-TEST(PIXSE_STATUS, valid_strings)
+TEST(PIXSE_ALGSTS, valid_strings)
 {
 
   auto gen = [](uint32_t lsb, uint32_t msb, uint8_t checksum) {
-    auto msg = ds_nmea_msgs::PixseStatus{};
+    auto msg = ds_nmea_msgs::PixseAlgsts{};
     msg.lsb = lsb;
     msg.msb = msb;
     msg.checksum = checksum;
@@ -15,14 +15,14 @@ TEST(PIXSE_STATUS, valid_strings)
   };
 
   const auto test_pairs =
-      std::list<std::pair<std::string, ds_nmea_msgs::PixseStatus>>{
-          {"$PIXSE,STATUS,08000200,00001A00*15\r\n", gen(0x8000200, 0x1A00, 0x15)}
+      std::list<std::pair<std::string, ds_nmea_msgs::PixseAlgsts>>{
+          {"$PIXSE,ALGSTS,00000041,00030000*63", gen(0x41, 0x30000, 0x63)}
       };
 
   // Loop through all provided cases
   for (const auto& test_pair : test_pairs)
   {
-    auto msg = ds_nmea_msgs::PixseStatus{};
+    auto msg = ds_nmea_msgs::PixseAlgsts{};
     auto expected = test_pair.second;
     const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
 

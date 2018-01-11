@@ -1,4 +1,4 @@
-#include "ds_nmea_msgs/util.h"
+#include "ds_nmea_parsers/parsers.h"
 
 namespace ds_nmea_msgs
 {

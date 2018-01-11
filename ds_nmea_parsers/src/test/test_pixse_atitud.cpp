@@ -1,30 +1,28 @@
-#include "ds_nmea_msgs/util.h"
-#include "ds_nmea_msgs/Hdt.h"
+#include "ds_nmea_parsers/parsers.h"
 
 #include <list>
 #include <gtest/gtest.h>
 
-TEST(HEHDT, valid_strings)
+TEST(PIXSE_ATITUD, valid_strings)
 {
 
-  auto hdt = [](double heading, bool true_flag, uint8_t checksum) {
-    auto msg = ds_nmea_msgs::Hdt{};
-    msg.heading = heading;
-    msg.is_true = static_cast<unsigned char>(true_flag);
+  auto gen = [](double roll, double pitch, uint8_t checksum) {
+    auto msg = ds_nmea_msgs::PixseAtitud{};
+    msg.roll = roll;
+    msg.pitch = pitch;
     msg.checksum = checksum;
     return msg;
   };
 
   const auto test_pairs =
-      std::list<std::pair<std::string, ds_nmea_msgs::Hdt>>{
-          {"$HEHDT,123.4,T*1F\r\n", hdt(123.4, true, 0x1F)},
-          {"$HEHDT,284.49,T*1C", hdt(284.49, true, 0x1C)}
+      std::list<std::pair<std::string, ds_nmea_msgs::PixseAtitud>>{
+          {"$PIXSE,ATITUD,1.129,5.394*62\r\n", gen(1.129,5.394, 0x62)}
       };
 
   // Loop through all provided cases
   for (const auto& test_pair : test_pairs)
   {
-    auto msg = ds_nmea_msgs::Hdt{};
+    auto msg = ds_nmea_msgs::PixseAtitud{};
     auto expected = test_pair.second;
     const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
 
@@ -32,8 +30,8 @@ TEST(HEHDT, valid_strings)
     EXPECT_TRUE(ok);
 
     // All fields should match.
-    EXPECT_FLOAT_EQ(expected.heading, msg.heading);
-    EXPECT_EQ(expected.is_true, msg.is_true);
+    EXPECT_FLOAT_EQ(expected.roll, msg.roll);
+    EXPECT_EQ(expected.pitch, msg.pitch);
     EXPECT_EQ(expected.checksum, msg.checksum);
   }
 }
