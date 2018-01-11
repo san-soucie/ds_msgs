@@ -60,6 +60,7 @@ add_message_files(DIRECTORY msg
   PixseAlgsts.msg
   PixseStatus.msg
   PixseHtsts.msg
+  PixseHspos.msg
 )
 
 ## Generate services in the 'srv' folder

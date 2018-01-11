@@ -13,6 +13,7 @@
 #include "ds_nmea_msgs/PixseAlgsts.h"
 #include "ds_nmea_msgs/PixseStatus.h"
 #include "ds_nmea_msgs/PixseHtsts.h"
+#include "ds_nmea_msgs/PixseHspos.h"
 
 #include <utility>
 #include <string>
@@ -32,6 +33,7 @@ bool from_string(PixseStdspd& output, const std::string &nmea_string);
 bool from_string(PixseAlgsts& output, const std::string &nmea_string);
 bool from_string(PixseStatus& output, const std::string &nmea_string);
 bool from_string(PixseHtsts& output, const std::string &nmea_string);
+bool from_string(PixseHspos& output, const std::string &nmea_string);
 
 }
 #endif //DS_NMEA_MSGS_UTIL_H
