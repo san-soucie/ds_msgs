@@ -53,6 +53,7 @@ add_message_files(
   DIRECTORY msg
   FILES
       AcousticCurrentProfile.msg
+      Compass.msg
       Ctd.msg
       DepthPressure.msg
       Dvl.msg

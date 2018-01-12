@@ -1,4 +1,5 @@
 # Message for a Gyro
+float64 GYRO_NO_DATA = -9999.0
 
 # The standard 2-part DsHeader block
 # This allows both a standard ROS header and DS-specific header blocks
@@ -6,7 +7,11 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# In degrees. Follows Fossen N-E-D notation
-float64 roll               # + rolls to stbd
-float64 pitch              # + pitch nose up
-float64 heading            # + turns to stbd
+# In degrees.  Standard "Foward - Up - Left" coorinates
+float64 roll               # + rolls to right
+float64 pitch              # + pitch nose down
+float64 heading            # + turns to left
+
+float64 roll_covar
+float64 pitch_covar
+float64 heading_covar

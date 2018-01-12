@@ -89,7 +89,7 @@ bool from_string(PixseHeave& output, const std::string &nmea_string)
 bool from_string(PixseStdhrp& output, const std::string &nmea_string)
 {
   const auto n = sscanf(
-      nmea_string.c_str(), "$PIXSE,STDRPH,%lf,%lf,%lf*%02hhx\r\n",
+      nmea_string.c_str(), "$PIXSE,STDHRP,%lf,%lf,%lf*%02hhx\r\n",
       &output.heading, &output.roll, &output.pitch, &output.checksum);
 
   if (n < 3) {

@@ -3,7 +3,7 @@
 #include <list>
 #include <gtest/gtest.h>
 
-TEST(PIXSE_STDHRP, valid_strings)
+TEST(PIXSE_UTMWGS, valid_strings)
 {
 
   auto gen = [](uint8_t lat_zone, int16_t lon_zone, double eastings, double northings, double altitude, uint8_t checksum) {
