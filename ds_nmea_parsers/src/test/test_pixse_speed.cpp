@@ -17,7 +17,7 @@ TEST(PIXSE_SPEED, valid_strings)
 
   const auto test_pairs =
       std::list<std::pair<std::string, ds_nmea_msgs::PixseSpeed>>{
-          {"$PIXSE,SPEED_,-0.068,0.046,0.009*49", gen(-0.68, 0.046, 0.009, 0x49)},
+          {"$PIXSE,SPEED_,-0.068,0.046,0.009*49", gen(-0.068, 0.046, 0.009, 0x49)},
           {"$PIXSE,SPEED_,0.000,0.000,0.284*77\r\n", gen(0, 0, 0.284, 0x77)}
       };
 

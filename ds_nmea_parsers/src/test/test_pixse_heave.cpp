@@ -17,7 +17,7 @@ TEST(PIXSE_HEAVE, valid_strings)
 
   const auto test_pairs =
       std::list<std::pair<std::string, ds_nmea_msgs::PixseHeave>>{
-          {"$PIXSE,HEAVE_,0.000,0.000,-0.039*5E\r\n", gen(0, 0, -0.39, 0x5e)},
+          {"$PIXSE,HEAVE_,0.000,0.000,-0.039*5E\r\n", gen(0, 0, -0.039, 0x5e)},
           {"$PIXSE,HEAVE_,0.000,0.000,0.284*77\r\n", gen(0, 0, 0.284, 0x77)}
       };
 

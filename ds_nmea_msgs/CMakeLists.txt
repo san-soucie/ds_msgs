@@ -57,11 +57,7 @@ add_message_files(DIRECTORY msg
   PixseStdspd.msg
   PixseStdpos.msg
   PixseAlgsts.msg
-  PixseAlgstsLsb.msg
-  PixseAlgstsMsb.msg
   PixseStatus.msg
-  PixseStatusLsb.msg
-  PixseStatusMsb.msg
   PixseHtsts.msg
   PixseHspos.msg
 )

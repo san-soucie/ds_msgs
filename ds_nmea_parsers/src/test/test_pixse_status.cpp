@@ -5,115 +5,107 @@
 
 /// Enum flags are coded as decimal values in the message definitions....
 /// make sure they're actually the expected powers of 2
-TEST(PIXSE_STATUS, lsb_enum_values)
+TEST(PIXSE_STATUS, enum_values)
 {
 
-  const auto expected_flag_order = std::vector<uint32_t>
+  const auto expected_flag_order = std::vector<uint64_t>
       {
-        ds_nmea_msgs::PixseStatusLsb::DATA_READY_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::SRC_POWER_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::SRC_DIODE_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::SRC_MODE_ERROR,
 
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_OVER_DYN_LG,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_OVER_DYN_LG,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_OVER_DYN_LG,
-        ds_nmea_msgs::PixseStatusLsb::ACC_X_ACQ_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_R_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_A_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_B_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_C_ERROR,
 
-        ds_nmea_msgs::PixseStatusLsb::ACC_Y_ACQ_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::ACC_Z_ACQ_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_STAT_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_STAT_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_D_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_E_ERROR,
+        ds_nmea_msgs::PixseStatus::RESERVED_01,
+        ds_nmea_msgs::PixseStatus::RESERVED_02,
 
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_STAT_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_VPI_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_VPI_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_VPI_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_R_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_A_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_B_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_C_ACTIVITY,
 
-        ds_nmea_msgs::PixseStatusLsb::RESERVED,
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_OVER_DYN,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_OVER_DYN,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_OVER_DYN,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_D_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::SERIAL_INPUT_E_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::RESERVED_03,
+        ds_nmea_msgs::PixseStatus::RESERVED_04,
 
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_RX_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_RX_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_RX_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_X_CRC_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_R_FULL,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_A_FULL,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_B_FULL,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_C_FULL,
 
-        ds_nmea_msgs::PixseStatusLsb::FOG_Y_CRC_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FOG_Z_CRC_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::TEMP_ACQ_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::TEMP_THRESHOLD_ERROR,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_D_FULL,
+        ds_nmea_msgs::PixseStatus::SERIAL_OUTPUT_E_FULL,
+        ds_nmea_msgs::PixseStatus::RESERVED_05,
+        ds_nmea_msgs::PixseStatus::RESERVED_06,
 
-        ds_nmea_msgs::PixseStatusLsb::DIODE_TEMP_THRESHOLD_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::FIFO_FULL_WARNING,
-        ds_nmea_msgs::PixseStatusLsb::FIFO_FULL_ERROR,
-        ds_nmea_msgs::PixseStatusLsb::SRC_POWER_ERROR2,
+        ds_nmea_msgs::PixseStatus::RESERVED_07,
+        ds_nmea_msgs::PixseStatus::RESERVED_08,
+        ds_nmea_msgs::PixseStatus::ETHERNET_ACTIVITY,
+        ds_nmea_msgs::PixseStatus::USER_CONTROL_BIT_A,
+
+        ds_nmea_msgs::PixseStatus::USERECONTROL_BIT_B,
+        ds_nmea_msgs::PixseStatus::USER_CONTROL_BIT_C,
+        ds_nmea_msgs::PixseStatus::USER_CONTROL_BIT_D,
+        ds_nmea_msgs::PixseStatus::RESERVED_09,
+
+        ds_nmea_msgs::PixseStatus::DVL_BOTTOM_TRACK_DETECTED,
+        ds_nmea_msgs::PixseStatus::DVL_WATER_TRACK_DETECTED,
+        ds_nmea_msgs::PixseStatus::GPS1_DETECTED,
+        ds_nmea_msgs::PixseStatus::GPS2_DETECTED,
+
+        ds_nmea_msgs::PixseStatus::USBL_DETECTED,
+        ds_nmea_msgs::PixseStatus::LBL_DETECTED,
+        ds_nmea_msgs::PixseStatus::DEPTH_DETECTED,
+        ds_nmea_msgs::PixseStatus::LOG_EM_DETECTED,
+
+        ds_nmea_msgs::PixseStatus::ODOMETER_DETECTED,
+        ds_nmea_msgs::PixseStatus::UTC_DETECTED,
+        ds_nmea_msgs::PixseStatus::ALTITUDE_DETECTED,
+        ds_nmea_msgs::PixseStatus::PPS_DETECTED,
+
+        ds_nmea_msgs::PixseStatus::ZUP_ACTIVATED,
+        ds_nmea_msgs::PixseStatus::METROLOGY_DETECTED,
+        ds_nmea_msgs::PixseStatus::MANUAL_GPS_DETECTED,
+        ds_nmea_msgs::PixseStatus::CTD_DETECTED,
+
+        ds_nmea_msgs::PixseStatus::HRP_DEGRADED,
+        ds_nmea_msgs::PixseStatus::HRP_NOT_VALID,
+        ds_nmea_msgs::PixseStatus::RESERVED_10,
+        ds_nmea_msgs::PixseStatus::RESERVED_11,
+
+        ds_nmea_msgs::PixseStatus::RESERVED_12,
+        ds_nmea_msgs::PixseStatus::RESERVED_13,
+        ds_nmea_msgs::PixseStatus::RESERVED_14,
+        ds_nmea_msgs::PixseStatus::RESERVED_15,
+
+        ds_nmea_msgs::PixseStatus::RESERVED_16,
+        ds_nmea_msgs::PixseStatus::RESERVED_17,
+        ds_nmea_msgs::PixseStatus::RESERVED_18,
+        ds_nmea_msgs::PixseStatus::MPC_OVERLOAD,
+
+        ds_nmea_msgs::PixseStatus::FAULT_ALARM,
+        ds_nmea_msgs::PixseStatus::MANUFACTURES_MODE,
+        ds_nmea_msgs::PixseStatus::CONFIGURATION_SAVED,
+        ds_nmea_msgs::PixseStatus::SYSTEM_RESTARTED,
       };
 
-  for(auto i=0; i<expected_flag_order.size(); ++i)
-  {
-    EXPECT_EQ(expected_flag_order.at(i), 1 << i);
-  }
-}
-
-TEST(PIXSE_STATUS, msb_enum_values)
-{
-
-  const auto expected_flag_order = std::vector<uint32_t> {
-      ds_nmea_msgs::PixseStatusMsb::FOG_X_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::FOG_Y_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::FOG_Z_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::SRC_ERROR,
-
-      ds_nmea_msgs::PixseStatusMsb::ACC_X_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::ACC_Y_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::ACC_Z_ERROR,
-      ds_nmea_msgs::PixseStatusMsb::TEMP_ERROR,
-
-      ds_nmea_msgs::PixseStatusMsb::CSDP_OVERLOAD,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED01,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED02,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED03,
-
-      ds_nmea_msgs::PixseStatusMsb::RESERVED04,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED05,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED06,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED07,
-
-      ds_nmea_msgs::PixseStatusMsb::RESERVED08,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED09,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED10,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED11,
-
-      ds_nmea_msgs::PixseStatusMsb::RESERVED12,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED13,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED14,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED15,
-
-      ds_nmea_msgs::PixseStatusMsb::RESERVED16,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED17,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED18,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED19,
-
-      ds_nmea_msgs::PixseStatusMsb::RESERVED20,
-      ds_nmea_msgs::PixseStatusMsb::RESERVED21,
-      ds_nmea_msgs::PixseStatusMsb::OPERATION_MODE_DEGRADED,
-      ds_nmea_msgs::PixseStatusMsb::FAILURE,
-  };
+  const auto ONE = static_cast<uint64_t>(1);
 
   for(auto i=0; i<expected_flag_order.size(); ++i)
   {
-    EXPECT_EQ(expected_flag_order.at(i), 1 << i);
+    EXPECT_EQ(expected_flag_order.at(i), ONE << i);
   }
 }
+
 TEST(PIXSE_STATUS, valid_strings)
 {
 
   auto gen = [](uint32_t lsb, uint32_t msb, uint8_t checksum) {
     auto msg = ds_nmea_msgs::PixseStatus{};
-    msg.lsb.flags = lsb;
-    msg.msb.flags = msb;
+    msg.status = (static_cast<uint64_t>(msb) << 32) + lsb;
     msg.checksum = checksum;
     return msg;
   };
@@ -134,8 +126,7 @@ TEST(PIXSE_STATUS, valid_strings)
     EXPECT_TRUE(ok);
 
     // All fields should match.
-    EXPECT_EQ(expected.lsb.flags, msg.lsb.flags);
-    EXPECT_EQ(expected.msb.flags, msg.msb.flags);
+    EXPECT_EQ(expected.status, msg.status);
     EXPECT_EQ(expected.checksum, msg.checksum);
   }
 }
