@@ -4,6 +4,6 @@
 #  llllllll is the hexadecimal value of PHINS System status MSB (see Table V-2)
 #  hh is the checksum
 
-uint32 lsb
-uint32 msb
+PixseStatusLsb lsb
+PixseStatusMsb msb
 uint8 checksum

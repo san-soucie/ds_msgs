@@ -62,7 +62,7 @@ bool from_string(PixseSpeed& output, const std::string &nmea_string)
 bool from_string(PixseUtmwgs& output, const std::string &nmea_string)
 {
   const auto n = sscanf(
-      nmea_string.c_str(), "$PIXSE,UTMWGS,%1c,%hu,%lf,%lf,%lf,*%02hhx\r\n",
+      nmea_string.c_str(), "$PIXSE,UTMWGS,%1c,%hu,%lf,%lf,%lf*%02hhx\r\n",
       &output.latitude_utm_zone, &output.longitude_utm_zone, &output.eastings,
       &output.northings, &output.altitude, &output.checksum);
 
@@ -155,7 +155,7 @@ bool from_string(PixseHtsts& output, const std::string &nmea_string)
 {
   const auto n = sscanf(
       nmea_string.c_str(), "$PIXSE,HT_STS,%x*%02hhx\r\n",
-      &output.lsb, &output.checksum);
+      &output.status, &output.checksum);
 
   if (n < 1) {
     return false;

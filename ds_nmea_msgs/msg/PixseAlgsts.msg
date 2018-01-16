@@ -4,6 +4,10 @@
 #  llllllll is the hexadecimal value of PHINS Algo status MSB (see Table V-4)
 #  hh is the checksum
 
-uint32 lsb
-uint32 msb
+# Algorithm Status LSB enum
+PixseAlgstsLsb lsb
+
+# Algorithm Status MSB enum
+PixseAlgstsMsb msb
+
 uint8 checksum
