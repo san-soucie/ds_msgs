@@ -50,7 +50,8 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
         DIRECTORY msg
   FILES
-    ModelState.msg
+  ModelState.msg
+  NavState.msg
 )
 
 ## Generate services in the 'srv' folder
