@@ -7,7 +7,7 @@ float64 GYRO_NO_DATA = -9999.0
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# In degrees.  Standard "Foward - Up - Left" coorinates
+# In degrees.  Standard "Forward - Up - Left" coorinates
 float64 roll               # + rolls to right
 float64 pitch              # + pitch nose down
 float64 heading            # + turns to left
