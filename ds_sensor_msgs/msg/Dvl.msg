@@ -49,10 +49,5 @@ uint8 velocity_mode
 # Coordinate system mode (see above)
 uint8 coordinate_mode
 
-#####################################################################
-# Debug data
-uint32 unit_serial_number
-uint64 unit_timestamp
-
 
 
