@@ -22,9 +22,9 @@ geometry_msgs/Vector3 velocity
 # row-major, xyz axes.  Set to "-1" if not known.
 float64[9] velocity_covar
 
-float64 altitude
-float64 course_gnd
-float64 speed_gnd
+float64 altitude    # Average of all good beam ranges: altitude = sum(range) / num_good_beams
+float64 course_gnd  # Calculated from xy velocities: course_gnd = atan2(velocity.y, velocity.x)
+float64 speed_gnd   # Calculated from xy velocities: speed_gnd = sqrt(velocity.x^2 + velocity.y^2)
 
 uint8 num_good_beams
 
@@ -33,7 +33,7 @@ float32 speed_sound
 
 #####################################################################
 # Raw data
-geometry_msgs/Vector3[4] beam_unit_vec
+geometry_msgs/Vector3[4] beam_unit_vec  # Geometry of each of the 4 beams
 float32[4] range
 float32[4] range_covar
 
@@ -48,6 +48,3 @@ uint8 velocity_mode
 
 # Coordinate system mode (see above)
 uint8 coordinate_mode
-
-
-
