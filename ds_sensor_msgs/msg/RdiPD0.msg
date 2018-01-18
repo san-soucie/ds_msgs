@@ -143,3 +143,6 @@ uint8[4] ref_percent_good   #TODO: IMPORTANT-->DVLDATA
 uint16 depth_max
 uint32[4] rssi_amp      #Receiver Signal Strength indicator
 uint8 gain
+
+uint8 good_beams #NUMBER OF GOOD BEAMS CALCULATED FROM DATA
+float64 dvl_time
