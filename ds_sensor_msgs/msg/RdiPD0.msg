@@ -11,6 +11,8 @@ ds_core_msgs/DsHeader ds_header
 float64 altitude_sum
 float64 speed_gnd
 float64 course_gnd
+uint8 good_beams
+float64 dvl_time
 
 ####################
 # DVL fixed leader #
@@ -18,7 +20,7 @@ float64 course_gnd
 
 # Units: Distances [cm]; Velocities [mm/s]; Angles [deg/100]
 
-uint8 fw_ver            #TODO: IMPORTANT-->DVLDATA
+uint8 fw_ver
 uint8 fw_rev
 uint32 config_khz       #75, 150, 300, or 600
 bool config_convex      #1 for convex, 0 for concave
@@ -29,13 +31,13 @@ uint16 config_beamangle #15E, 20E, 30E, or 0 for other
 uint8 config_janus      #4 for 4 beam, 5 for 5 beam demod, 15 for 5 beam 2 demod
 uint8 real_sim          #0=real is default
 uint8 lag
-uint8 beams             #TODO: IMPORTANT-->DVLDATA
+uint8 beams
 uint8 cells
 uint16 pings
 uint16 cell_depth
 uint16 blank
 uint8 signal_proc       #Always =1
-uint8 min_thresh        #WHAT IS THIS?
+uint8 min_thresh
 uint8 code_reps
 uint8 min_good_pings
 uint16 good_thresh
@@ -55,10 +57,10 @@ uint8 avg_start
 uint8 avg_end
 float32 avg_false_thresh
 float32 trans_lag_dist
-uint64 serial_num_cpu   #TODO: IMPORTANT-->DVLDATA
+uint64 serial_num_cpu
 uint16 wb_cmd           #range 0 to 1
 uint8 power
-uint32 serial_num       #TODO: IMPORTANT-->DVLDATA
+uint32 serial_num
 uint8 beam_angle
 
 
@@ -71,11 +73,11 @@ uint8 beam_angle
 uint32 ensemble_num
 uint8 BIT
 
-time rtc_time           #Real-time clock for current data ensemble #TODO: IMPORTANT-->DVLDATA
+time rtc_time           #Real-time clock for current data ensemble
 bool error_demod1       #flags from BIT result
 bool error_demod0
 bool error_timingcard
-uint32 sound_vel        #ec --> m/s     #TODO: IMPORTANT-->DVLDATA
+uint32 sound_vel        #ec --> m/s
 float64 depth           #ed --> m
 float64 heading         #eh --> degrees
 float64 pitch           #ep --> degrees
@@ -112,7 +114,7 @@ bool error_interrupt7
 float64 pressure
 float64 pressure_variance
 
-time y2k_time           #Y2K-compliant real-time clock for current data ensemble  #TODO: IMPORTANT-->DVLDATA
+time y2k_time           #Y2K-compliant real-time clock for current data ensemble
 
 
 ####################
@@ -126,23 +128,21 @@ uint16 delay
 uint8 corr_mag_min
 uint8 eval_amp_min
 uint8 percent_good_min
-uint8 mode              #TODO: IMPORTANT-->DVLDATA
+uint8 mode
 uint32 err_vel_max
-float32[4] range         #TODO: IMPORTANT-->DVLDATA
-float32[4] velocity      #TODO: IMPORTANT-->DVLDATA
-float32[4] correlation   #TODO: IMPORTANT-->DVLDATA
+float32[4] range
+float32[4] velocity
+float32[4] correlation
 uint8[4] eval_amp
-uint8[4] percent_good   #TODO: IMPORTANT-->DVLDATA
+uint8[4] percent_good
 uint32 ref_min
 float32 ref_near
 float32 ref_far
-uint32[4] ref_velocity      #TODO: IMPORTANT-->DVLDATA
-uint32[4] ref_correlation   #TODO: IMPORTANT-->DVLDATA
+uint32[4] ref_velocity
+uint32[4] ref_correlation
 float32[4] ref_intensity
-uint8[4] ref_percent_good   #TODO: IMPORTANT-->DVLDATA
+uint8[4] ref_percent_good
 uint16 depth_max
 uint32[4] rssi_amp      #Receiver Signal Strength indicator
 uint8 gain
 
-uint8 good_beams #NUMBER OF GOOD BEAMS CALCULATED FROM DATA
-float64 dvl_time
