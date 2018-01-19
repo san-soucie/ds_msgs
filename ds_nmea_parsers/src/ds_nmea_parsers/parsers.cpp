@@ -1,4 +1,8 @@
 #include "ds_nmea_parsers/parsers.h"
+#include <boost/algorithm/string/split.hpp>
+#include <boost/algorithm/string/classification.hpp>
+#include <boost/lexical_cast.hpp>
+
 #include <endian.h>
 
 namespace ds_nmea_msgs
@@ -220,6 +224,69 @@ bool from_string(PixseHspos& output, const std::string &nmea_string)
   auto timestamp = std::mktime(&tm);
   output.timestamp.fromSec(static_cast<int>(timestamp) + second);
   return true;
+}
+
+bool from_string(Gga& output, const std::string &nmea_string)
+{
+  auto fields = std::vector<std::string>{};
+  boost::split(fields, nmea_string, boost::is_any_of(","));
+
+#if 0
+  if (fields.size() < 14) {
+    return false;
+  }
+  //         1         2      3 4        5 6 7  8   9   10 |  12 13  14   15
+  //         |         |      | |        | | |  |   |   |  |  |  |   |    |
+  // $--GGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh
+  //  1) Time (UTC)
+  //  2) Latitude
+  //  3) N or S (North or South)
+  //  4) Longitude
+  //  5) E or W (East or West)
+  //  6) GPS Quality Indicator,
+  //  0 - fix not available,
+  //  1 - GPS fix,
+  //  2 - Differential GPS fix
+  //  7) Number of satellites in view, 00 - 12
+  //  8) Horizontal Dilution of precision
+  //  9) Antenna Altitude above/below mean-sea-level (geoid)
+  // 10) Units of antenna altitude, meters
+  // 11) Geoidal separation, the difference between the WGS-84 earth ellipsoid and mean-sea-level (geoid), "-" means mean-sea-level below ellipsoid
+  // 12) Units of geoidal separation, meters
+  // 13) Age of differential GPS data, time in seconds since last SC104 type 1 or 9 update, null field when DGPS is not used
+  // 14) Differential reference station ID, 0000-1023
+  // 15) Checksum
+
+  auto msg = ds_nmea_msgs::Gga{};
+  msg.timestamp = ros::Time::now();
+
+  try {
+    msg.latitude = boost::lexical_cast<double>(fields.at(1));
+  }
+  catch (boost::bad_lexical_cast&) {
+    msg.latitude = Gga::GGA_NO_DATA;
+  }
+
+  try {
+    msg.latitude_dir = boost::lexical_cast<uint8_t>(fields.at(2));
+  }
+  catch (boost::bad_lexical_cast&) {
+    msg.latitude_dir = 'N';
+  }
+
+  try {
+    msg.longitude = boost::lexical_cast<double>(fields.at(3));
+  }
+  catch (boost::bad_lexical_cast&) {
+    msg.longitude = Gga::GGA_NO_DATA;
+  }
+
+  try {
+    msg.longitude_dir = boost::lexical_cast
+  }
+#endif
+
+  return {};
 }
 
 }

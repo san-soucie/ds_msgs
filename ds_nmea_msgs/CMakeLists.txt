@@ -48,6 +48,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(DIRECTORY msg
   FILES
   Hdt.msg
+  Gga.msg
   PixseAtitud.msg
   PixsePositi.msg
   PixseSpeed.msg

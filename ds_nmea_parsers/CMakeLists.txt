@@ -203,6 +203,9 @@ install(DIRECTORY include/${PROJECT_NAME}/
 catkin_add_gtest(test_hehdt src/test/test_hehdt.cpp)
 target_link_libraries(test_hehdt ${PROJECT_NAME})
 
+catkin_add_gtest(test_gga src/test/test_gga.cpp)
+target_link_libraries(test_gga ${PROJECT_NAME})
+
 catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
 target_link_libraries(test_pixse_atitud ${PROJECT_NAME})
 
