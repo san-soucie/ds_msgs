@@ -57,11 +57,11 @@ uint8 avg_start
 uint8 avg_end
 float32 avg_false_thresh
 float32 trans_lag_dist
-uint64 serial_num_cpu
-uint16 wb_cmd           #range 0 to 1
-uint8 power
-uint32 serial_num
-uint8 beam_angle
+uint8[8] serial_num_cpu
+uint16 wb_cmd           #THESE ENTRIES MAY NOT BE VALID
+uint8 power             #THESE ENTRIES MAY NOT BE VALID
+uint32 serial_num       #THESE ENTRIES MAY NOT BE VALID
+uint8 beam_angle        #THESE ENTRIES MAY NOT BE VALID
 
 
 #######################
@@ -74,6 +74,13 @@ uint32 ensemble_num
 uint8 BIT
 
 time rtc_time           #Real-time clock for current data ensemble
+uint8 rtc_year
+uint8 rtc_month
+uint8 rtc_day
+uint8 rtc_hour
+uint8 rtc_minute
+uint8 rtc_second
+uint8 rtc_hundredth
 bool error_demod1       #flags from BIT result
 bool error_demod0
 bool error_timingcard
@@ -138,7 +145,7 @@ uint8[4] percent_good
 uint32 ref_min
 float32 ref_near
 float32 ref_far
-uint32[4] ref_velocity
+int32[4] ref_velocity
 uint32[4] ref_correlation
 float32[4] ref_intensity
 uint8[4] ref_percent_good
