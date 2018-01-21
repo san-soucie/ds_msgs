@@ -15,6 +15,19 @@ namespace ds_nmea_msgs
 
 uint8_t calculate_checksum(const std::string& nmea_msg);
 
+/// \@brief Convert nmea-style latitude to decimal degrees
+///
+/// Latitudes in most NMEA messages are in decimal minutes packed
+/// as a single number.  For example:
+///
+///    5423.453
+///
+/// is really 54deg 23.453min, which is 54.39088deg
+///
+/// \param nmea_decmin
+/// \return
+double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept;
+
 /// @brief Convert a clock time to a full UTC date
 ///
 /// Many NMEA sentances provide timestamps in UTC that only contain

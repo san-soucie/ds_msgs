@@ -49,6 +49,7 @@ add_message_files(DIRECTORY msg
   FILES
   Hdt.msg
   Gga.msg
+  Gll.msg
   PixseAtitud.msg
   PixsePositi.msg
   PixseSpeed.msg

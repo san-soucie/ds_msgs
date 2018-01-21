@@ -44,6 +44,25 @@ TEST(NMEA_CHECKSUM, invalid_strings)
     ASSERT_EQ(expected, chksum);
   }
 }
+
+TEST(NMEA_DECMIN, valid_conversions)
+{
+  const auto test_pairs =
+      std::list<std::pair<double, double>>{
+          {4523.342, 45.3890333},
+          {-7323.43, -73.3905},
+      };
+
+  // Loop through all provided cases
+  for (const auto& test_pair : test_pairs)
+  {
+    auto expected = test_pair.second;
+    const auto result = ds_nmea_msgs::nmea_dec_min_dec_degrees(test_pair.first);
+
+    // Should have succeeded
+    ASSERT_FLOAT_EQ(expected, result);
+  }
+}
 // Run all the tests that were declared with TEST()
 int main(int argc, char** argv)
 {

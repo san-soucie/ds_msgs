@@ -9,11 +9,12 @@ TEST(PIXSE_GGA, valid_strings)
 {
 
   auto gen = [](
-      int hour, int minute, double seconds, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
+      std::string talker, int hour, int minute, double seconds, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
       uint8_t fix_quality, uint8_t num_satellites, double hdop, double antenna_alt, uint8_t antenna_alt_unit,
       double geoid_separation, uint8_t geoid_separation_unit, double dgps_age, uint16_t dgps_ref, uint8_t checksum)
   {
     auto msg = ds_nmea_msgs::Gga{};
+    msg.talker = talker;
     msg.timestamp = ds_nmea_msgs::from_nmea_utc(hour, minute, seconds);
     msg.latitude = latitude;
     msg.latitude_dir = latitude_dir;
@@ -37,6 +38,7 @@ TEST(PIXSE_GGA, valid_strings)
           {
               "$GPGGA,212354.657,,,,,0,00,50.0,,M,0.0,M,,0000*4A",
               gen(
+                  "GP",
                   21, 23, 54.657,
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
                   0,
@@ -67,6 +69,7 @@ TEST(PIXSE_GGA, valid_strings)
     ASSERT_TRUE(ok);
 
     // All fields should match.
+    EXPECT_STREQ(expected.talker.data(), msg.talker.data());
     EXPECT_EQ(expected.timestamp, msg.timestamp);
     EXPECT_FLOAT_EQ(expected.latitude, msg.latitude);
     EXPECT_EQ(expected.latitude_dir, msg.latitude_dir);

@@ -28,6 +28,7 @@ uint8 FIX_NONE=0
 uint8 FIX_GPS=1
 uint8 FIX_DGPS=2
 
+string           talker
 time             timestamp
 float64          latitude
 uint8            latitude_dir

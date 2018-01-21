@@ -125,6 +125,9 @@ add_library(${PROJECT_NAME}
   src/${PROJECT_NAME}/Hdt.cpp
 
   include/${PROJECT_NAME}/Gga.h
+  src/${PROJECT_NAME}/Gll.cpp
+
+  include/${PROJECT_NAME}/Gll.h
   src/${PROJECT_NAME}/Gga.cpp
 
   include/${PROJECT_NAME}/PixseAlgsts.h
@@ -247,6 +250,9 @@ target_link_libraries(test_hehdt ${PROJECT_NAME})
 
 catkin_add_gtest(test_gga src/test/test_gga.cpp)
 target_link_libraries(test_gga ${PROJECT_NAME})
+
+catkin_add_gtest(test_gll src/test/test_gll.cpp)
+target_link_libraries(test_gll ${PROJECT_NAME})
 
 catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
 target_link_libraries(test_pixse_atitud ${PROJECT_NAME})

@@ -49,4 +49,10 @@ ros::Time from_nmea_utc(int hours, int minutes, double seconds)
   return ros::Time::fromBoost(adjusted);
 }
 
+double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept
+{
+  const auto degrees = static_cast<int>(nmea_decmin / 100);
+  return degrees + (nmea_decmin - degrees * 100) / 60;
+}
+
 }

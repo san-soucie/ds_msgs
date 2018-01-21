@@ -14,6 +14,7 @@ bool from_string(Gga& output, const std::string &nmea_string)
   auto second = 0.0;
 
   // Set defaults
+  output.talker.clear();
   output.latitude = Gga::GGA_NO_DATA;
   output.latitude_dir = 0;
   output.longitude = Gga::GGA_NO_DATA;
@@ -72,7 +73,12 @@ bool from_string(Gga& output, const std::string &nmea_string)
   // 14) Differential reference station ID, 0000-1023
   // 15) Checksum
 
-  auto i = 1;
+  auto i = 0;
+  char talker[2];
+  if (!sscanf(fields.at(i++).c_str(), "$%2cGGA", talker)) {
+    return false;
+  }
+  output.talker = std::string{std::begin(talker), std::end(talker)};
   // Break the first field into time components and create a ros::Time from it.
   if (sscanf(fields.at(i++).c_str(),"%02d%02d%lf", &hour, &minute, &second) != 3) {
     return false;
@@ -80,9 +86,13 @@ bool from_string(Gga& output, const std::string &nmea_string)
   output.timestamp = from_nmea_utc(hour, minute, second);
 
   sscanf(fields.at(i++).c_str(), "%lf", &output.latitude);
-  sscanf(fields.at(i++).c_str(), "%hhu", &output.latitude_dir);
+  output.latitude = nmea_dec_min_dec_degrees(output.latitude);
+  sscanf(fields.at(i++).c_str(), "%1c", &output.latitude_dir);
+
   sscanf(fields.at(i++).c_str(), "%lf", &output.longitude);
-  sscanf(fields.at(i++).c_str(), "%hhu", &output.longitude_dir);
+  output.longitude = nmea_dec_min_dec_degrees(output.longitude);
+  sscanf(fields.at(i++).c_str(), "%1c", &output.longitude_dir);
+
   sscanf(fields.at(i++).c_str(), "%hhu", &output.fix_quality);
   sscanf(fields.at(i++).c_str(), "%hhu", &output.num_satellites);
   sscanf(fields.at(i++).c_str(), "%lf", &output.hdop);
