@@ -1,18 +1,27 @@
 #include "ds_nmea_parsers/parsers.h"
 
 #include <list>
+
+#include <boost/date_time/gregorian/gregorian_types.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+
 #include <gtest/gtest.h>
 
 TEST(PIXSE_GGA, valid_strings)
 {
 
   auto gen = [](
-      ros::Time timestamp, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
+      int hour, int minute, double seconds, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
       uint8_t fix_quality, uint8_t num_satellites, double hdop, double antenna_alt, uint8_t antenna_alt_unit,
       double geoid_separation, uint8_t geoid_separation_unit, double dgps_age, uint16_t dgps_ref, uint8_t checksum)
   {
     auto msg = ds_nmea_msgs::Gga{};
-    msg.timestamp = timestamp;
+    const boost::gregorian::date utc_date(boost::gregorian::day_clock::universal_day());
+    const auto utc_datetime = boost::posix_time::ptime(
+        utc_date,
+        boost::posix_time::time_duration(hour, minute, seconds));
+
+    msg.timestamp = ros::Time::fromBoost(utc_datetime);
     msg.latitude = latitude;
     msg.latitude_dir = latitude_dir;
     msg.longitude = longitude;
@@ -35,11 +44,11 @@ TEST(PIXSE_GGA, valid_strings)
           {
               "$GPGGA,212354.657,,,,,0,00,50.0,,M,0.0,M,,0000*4A",
               gen(
-                  ros::Time::now(),
+                  21, 23, 54.657,
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
-                  ds_nmea_msgs::Gga::GGA_NO_DATA,
-                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
                   0,
                   0,
                   50.0,
@@ -62,7 +71,7 @@ TEST(PIXSE_GGA, valid_strings)
     const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
 
     // Should have succeeded
-    EXPECT_TRUE(ok);
+    ASSERT_TRUE(ok);
 
     // All fields should match.
     EXPECT_EQ(expected.timestamp, msg.timestamp);

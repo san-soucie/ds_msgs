@@ -1,7 +1,8 @@
 #include "ds_nmea_parsers/parsers.h"
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
-#include <boost/lexical_cast.hpp>
+#include <boost/date_time/gregorian/gregorian_types.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
 
 #include <endian.h>
 
@@ -203,38 +204,59 @@ bool from_string(PixseHspos& output, const std::string &nmea_string)
     return false;
   }
 
-  // Convert the timestamp into a ros::Time  object.  There's got to be an easier way to do this
-  // with std::chrono...
+  const boost::gregorian::date utc_date(boost::gregorian::day_clock::universal_day());
+  const auto utc_datetime = boost::posix_time::ptime(
+      utc_date,
+      boost::posix_time::time_duration(hour, minute, second));
 
-  auto now_seconds = static_cast<std::time_t>(ros::Time::now().toSec());
-  auto tm_ = std::gmtime(&now_seconds);
-  if(tm_ == nullptr) {
-    return false;
-  }
+  output.timestamp = ros::Time::fromBoost(utc_datetime);
 
-  // Make a copy immediately
-  auto tm = *tm_;
-
-  // Reset time
-  tm.tm_hour = hour;
-  tm.tm_min = minute;
-  tm.tm_sec = 0; // leave 0, we'll add it by hand later.
-
-  // recalculate seconds past epoch from tm
-  auto timestamp = std::mktime(&tm);
-  output.timestamp.fromSec(static_cast<int>(timestamp) + second);
   return true;
 }
 
 bool from_string(Gga& output, const std::string &nmea_string)
 {
-  auto fields = std::vector<std::string>{};
-  boost::split(fields, nmea_string, boost::is_any_of(","));
+  auto hour = int{0};
+  auto minute = int{0};
+  auto second = 0.0;
 
-#if 0
+  // Set defaults
+  output.latitude = Gga::GGA_NO_DATA;
+  output.latitude_dir = 0;
+  output.longitude = Gga::GGA_NO_DATA;
+  output.longitude_dir = 0;
+  output.fix_quality = 0;
+  output.num_satellites = 0;
+  output.hdop = Gga::GGA_NO_DATA;
+  output.antenna_alt = Gga::GGA_NO_DATA;
+  output.antenna_alt_unit = 0;
+  output.geoid_separation = Gga::GGA_NO_DATA;
+  output.geoid_separation_unit = 0;
+  output.dgps_age = Gga::GGA_NO_DATA;
+  output.dgps_ref = 0;
+  output.checksum = 0;
+
+  // The GGA NMEA string can have lots of empty fields.  For example:
+  //
+  //    $GPGGA,212354.657,,,,,0,00,50.0,,M,0.0,M,,0000*4A
+  //
+  // is perfectly valid.  So we can't rely on a standard sscanf
+  // with the whole message definition.
+  //
+  // Instead we'll split the message into substrings and use sscanf on each
+  // part.  This is certainly not the most efficient way to do things BUT
+  // we know that sscanf never generates exceptions (unlike boost::lexical_cast,
+  // or some of the newer std::strtoX methods).  At worst we get bad data,
+  // but at lest we don't have a lot of try/catch blocks.
+
+  auto fields = std::vector<std::string>{};
+  boost::split(fields, nmea_string, boost::is_any_of(",*"));
+
+  // Expect at LEAST 14 fields.
   if (fields.size() < 14) {
     return false;
   }
+
   //         1         2      3 4        5 6 7  8   9   10 |  12 13  14   15
   //         |         |      | |        | | |  |   |   |  |  |  |   |    |
   // $--GGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh
@@ -257,36 +279,35 @@ bool from_string(Gga& output, const std::string &nmea_string)
   // 14) Differential reference station ID, 0000-1023
   // 15) Checksum
 
-  auto msg = ds_nmea_msgs::Gga{};
-  msg.timestamp = ros::Time::now();
+  auto i = 1;
+  // Break the first field into time components and create a ros::Time from it.
+  sscanf(fields.at(i++).c_str(),"%02d%02d%lf", &hour, &minute, &second);
+  const boost::gregorian::date utc_date(boost::gregorian::day_clock::universal_day());
+  const auto utc_datetime = boost::posix_time::ptime(
+      utc_date,
+      boost::posix_time::time_duration(hour, minute, second));
 
-  try {
-    msg.latitude = boost::lexical_cast<double>(fields.at(1));
-  }
-  catch (boost::bad_lexical_cast&) {
-    msg.latitude = Gga::GGA_NO_DATA;
+  output.timestamp = ros::Time::fromBoost(utc_datetime);
+
+  sscanf(fields.at(i++).c_str(), "%lf", &output.latitude);
+  sscanf(fields.at(i++).c_str(), "%hhu", &output.latitude_dir);
+  sscanf(fields.at(i++).c_str(), "%lf", &output.longitude);
+  sscanf(fields.at(i++).c_str(), "%hhu", &output.longitude_dir);
+  sscanf(fields.at(i++).c_str(), "%hhu", &output.fix_quality);
+  sscanf(fields.at(i++).c_str(), "%hhu", &output.num_satellites);
+  sscanf(fields.at(i++).c_str(), "%lf", &output.hdop);
+  sscanf(fields.at(i++).c_str(), "%lf", &output.antenna_alt);
+  sscanf(fields.at(i++).c_str(), "%1c", &output.antenna_alt_unit);
+  sscanf(fields.at(i++).c_str(), "%lf", &output.geoid_separation);
+  sscanf(fields.at(i++).c_str(), "%1c", &output.geoid_separation_unit);
+  sscanf(fields.at(i++).c_str(), "%lf", &output.dgps_age);
+  sscanf(fields.at(i++).c_str(), "%hu", &output.dgps_ref);
+
+  if (fields.size() > 14) {
+    sscanf(fields.at(i++).c_str(), "%hhx", &output.checksum);
   }
 
-  try {
-    msg.latitude_dir = boost::lexical_cast<uint8_t>(fields.at(2));
-  }
-  catch (boost::bad_lexical_cast&) {
-    msg.latitude_dir = 'N';
-  }
-
-  try {
-    msg.longitude = boost::lexical_cast<double>(fields.at(3));
-  }
-  catch (boost::bad_lexical_cast&) {
-    msg.longitude = Gga::GGA_NO_DATA;
-  }
-
-  try {
-    msg.longitude_dir = boost::lexical_cast
-  }
-#endif
-
-  return {};
+  return true;
 }
 
 }
