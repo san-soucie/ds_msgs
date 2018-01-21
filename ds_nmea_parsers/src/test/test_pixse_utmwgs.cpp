@@ -1,4 +1,4 @@
-#include "ds_nmea_parsers/parsers.h"
+#include "ds_nmea_parsers/PixseUtmwgs.h"
 
 #include <list>
 #include <gtest/gtest.h>

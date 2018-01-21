@@ -1,9 +1,7 @@
-#include "ds_nmea_parsers/parsers.h"
+#include "ds_nmea_parsers/Gga.h"
+#include "ds_nmea_parsers/util.h"
 
 #include <list>
-
-#include <boost/date_time/gregorian/gregorian_types.hpp>
-#include <boost/date_time/posix_time/posix_time_types.hpp>
 
 #include <gtest/gtest.h>
 
@@ -16,12 +14,7 @@ TEST(PIXSE_GGA, valid_strings)
       double geoid_separation, uint8_t geoid_separation_unit, double dgps_age, uint16_t dgps_ref, uint8_t checksum)
   {
     auto msg = ds_nmea_msgs::Gga{};
-    const boost::gregorian::date utc_date(boost::gregorian::day_clock::universal_day());
-    const auto utc_datetime = boost::posix_time::ptime(
-        utc_date,
-        boost::posix_time::time_duration(hour, minute, seconds));
-
-    msg.timestamp = ros::Time::fromBoost(utc_datetime);
+    msg.timestamp = ds_nmea_msgs::from_nmea_utc(hour, minute, seconds);
     msg.latitude = latitude;
     msg.latitude_dir = latitude_dir;
     msg.longitude = longitude;
