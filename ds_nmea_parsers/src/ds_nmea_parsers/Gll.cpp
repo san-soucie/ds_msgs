@@ -57,12 +57,14 @@ bool from_string(Gll& output, const std::string &nmea_string)
   }
   output.talker = std::string{std::begin(talker), std::end(talker)};
 
-  sscanf(fields.at(i++).c_str(), "%lf", &output.latitude);
-  output.latitude = nmea_dec_min_dec_degrees(output.latitude);
+  if(sscanf(fields.at(i++).c_str(), "%lf", &output.latitude) > 0) {
+    output.latitude = nmea_dec_min_dec_degrees(output.latitude);
+  }
   sscanf(fields.at(i++).c_str(), "%1c", &output.latitude_dir);
 
-  sscanf(fields.at(i++).c_str(), "%lf", &output.longitude);
-  output.longitude = nmea_dec_min_dec_degrees(output.longitude);
+  if(sscanf(fields.at(i++).c_str(), "%lf", &output.longitude) > 0) {
+    output.longitude = nmea_dec_min_dec_degrees(output.longitude);
+  }
   sscanf(fields.at(i++).c_str(), "%1c", &output.longitude_dir);
 
   // Break the first field into time components and create a ros::Time from it.
