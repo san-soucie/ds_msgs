@@ -12,3 +12,13 @@ FlaggedDouble pitch
 FlaggedDouble heading
 FlaggedDouble depth
 FlaggedDouble altitude
+
+# Rates
+FlaggedDouble surge_u
+FlaggedDouble sway_v
+FlaggedDouble heave_w
+FlaggedDouble p
+FlaggedDouble q
+FlaggedDouble r
+FlaggedDouble depth_rate
+FlaggedDouble altitude_rate
