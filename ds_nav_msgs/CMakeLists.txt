@@ -52,6 +52,8 @@ add_message_files(
   FILES
   ModelState.msg
   NavState.msg
+  FlaggedDouble.msg
+  AggregatedState.msg
 )
 
 ## Generate services in the 'srv' folder
