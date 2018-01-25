@@ -121,9 +121,57 @@ include_directories(
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
-        include/${PROJECT_NAME}/parsers.h
-        src/${PROJECT_NAME}/parsers.cpp
-        )
+  include/${PROJECT_NAME}/Hdt.h
+  src/${PROJECT_NAME}/Hdt.cpp
+
+  include/${PROJECT_NAME}/Gll.h
+  src/${PROJECT_NAME}/Gll.cpp
+
+  include/${PROJECT_NAME}/Vtg.h
+  src/${PROJECT_NAME}/Vtg.cpp
+
+  include/${PROJECT_NAME}/Gga.h
+  src/${PROJECT_NAME}/Gga.cpp
+
+  include/${PROJECT_NAME}/PixseAlgsts.h
+  src/${PROJECT_NAME}/PixseAlgsts.cpp
+
+  include/${PROJECT_NAME}/PixseAtitud.h
+  src/${PROJECT_NAME}/PixseAtitud.cpp
+
+  include/${PROJECT_NAME}/PixseHeave.h
+  src/${PROJECT_NAME}/PixseHeave.cpp
+
+  include/${PROJECT_NAME}/PixseHspos.h
+  src/${PROJECT_NAME}/PixseHspos.cpp
+
+  include/${PROJECT_NAME}/PixseHtsts.h
+  src/${PROJECT_NAME}/PixseHtsts.cpp
+
+  include/${PROJECT_NAME}/PixsePositi.h
+  src/${PROJECT_NAME}/PixsePositi.cpp
+
+  include/${PROJECT_NAME}/PixseSpeed.h
+  src/${PROJECT_NAME}/PixseSpeed.cpp
+
+  include/${PROJECT_NAME}/PixseStatus.h
+  src/${PROJECT_NAME}/PixseStatus.cpp
+
+  include/${PROJECT_NAME}/PixseStdhrp.h
+  src/${PROJECT_NAME}/PixseStdhrp.cpp
+
+  include/${PROJECT_NAME}/PixseStdpos.h
+  src/${PROJECT_NAME}/PixseStdpos.cpp
+
+  include/${PROJECT_NAME}/PixseStdspd.h
+  src/${PROJECT_NAME}/PixseStdspd.cpp
+
+  include/${PROJECT_NAME}/PixseUtmwgs.h
+  src/${PROJECT_NAME}/PixseUtmwgs.cpp
+
+  include/${PROJECT_NAME}/util.h
+  src/${PROJECT_NAME}/util.cpp
+)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -206,6 +254,12 @@ target_link_libraries(test_hehdt ${PROJECT_NAME})
 catkin_add_gtest(test_gga src/test/test_gga.cpp)
 target_link_libraries(test_gga ${PROJECT_NAME})
 
+catkin_add_gtest(test_gll src/test/test_gll.cpp)
+target_link_libraries(test_gll ${PROJECT_NAME})
+
+catkin_add_gtest(test_vtg src/test/test_vtg.cpp)
+target_link_libraries(test_vtg ${PROJECT_NAME})
+
 catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
 target_link_libraries(test_pixse_atitud ${PROJECT_NAME})
 
@@ -238,6 +292,9 @@ target_link_libraries(test_pixse_stdhrp ${PROJECT_NAME})
 
 catkin_add_gtest(test_pixse_utmwgs src/test/test_pixse_utmwgs.cpp)
 target_link_libraries(test_pixse_utmwgs ${PROJECT_NAME})
+
+catkin_add_gtest(test_util src/test/test_util.cpp)
+target_link_libraries(test_util ${PROJECT_NAME})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)

@@ -34,7 +34,7 @@ float32 speed_sound
 #####################################################################
 # Raw data
 geometry_msgs/Vector3[4] beam_unit_vec  # Geometry of each of the 4 beams
-float32[4] range
+float64[4] range
 float32[4] range_covar
 
 # Raw velocities [m/s].  Will be beam 1,2,3,4 velocity

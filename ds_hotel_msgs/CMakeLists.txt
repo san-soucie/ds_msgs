@@ -51,6 +51,7 @@ add_message_files(
   DIRECTORY msg
   FILES
   PowerSupply.msg
+  HTP.msg
 )
 
 ## Generate services in the 'srv' folder

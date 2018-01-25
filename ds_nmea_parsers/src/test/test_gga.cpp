@@ -1,17 +1,20 @@
-#include "ds_nmea_parsers/parsers.h"
+#include "ds_nmea_parsers/Gga.h"
+#include "ds_nmea_parsers/util.h"
 
 #include <list>
+
 #include <gtest/gtest.h>
 
 TEST(PIXSE_GGA, valid_strings)
 {
 
   auto gen = [](
-      ros::Time timestamp, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
+      std::string talker, ros::Time timestamp, double latitude, uint8_t latitude_dir, double longitude, uint8_t longitude_dir,
       uint8_t fix_quality, uint8_t num_satellites, double hdop, double antenna_alt, uint8_t antenna_alt_unit,
       double geoid_separation, uint8_t geoid_separation_unit, double dgps_age, uint16_t dgps_ref, uint8_t checksum)
   {
     auto msg = ds_nmea_msgs::Gga{};
+    msg.talker = talker;
     msg.timestamp = timestamp;
     msg.latitude = latitude;
     msg.latitude_dir = latitude_dir;
@@ -35,11 +38,12 @@ TEST(PIXSE_GGA, valid_strings)
           {
               "$GPGGA,212354.657,,,,,0,00,50.0,,M,0.0,M,,0000*4A",
               gen(
-                  ros::Time::now(),
+                  "GP",
+                  ds_nmea_msgs::from_nmea_utc(21, 23, 54.657),
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
-                  ds_nmea_msgs::Gga::GGA_NO_DATA,
-                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
                   0,
                   0,
                   50.0,
@@ -50,6 +54,48 @@ TEST(PIXSE_GGA, valid_strings)
                   ds_nmea_msgs::Gga::GGA_NO_DATA,
                   0,
                   0x4A
+              )
+          },
+          {
+              "$GPGGA,140555.824,,,,,0,00,50.0,,M,0.0,M,,0000*43",
+              gen(
+                  "GP",
+                  ds_nmea_msgs::from_nmea_utc(14, 05, 55.824),
+                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
+                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
+                  0,
+                  0,
+                  50.0,
+                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  'M',
+                  0,
+                  'M',
+                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
+                  0x43
+              )
+          },
+          {
+              "$GPGGA,143010.357,4131.5546,N,07040.0115,W,1,04,2.5,13.4,M,-34.4,M,,0000*50\r\n",
+              gen(
+                  "GP",
+                  ds_nmea_msgs::from_nmea_utc(14, 30, 10.357),
+                  41.52591,
+                  'N',
+                  70.66686,
+                  'W',
+                  1,
+                  4,
+                  2.5,
+                  13.4,
+                  'M',
+                  -34.4,
+                  'M',
+                  ds_nmea_msgs::Gga::GGA_NO_DATA,
+                  0,
+                  0x50
               )
           }
       };
@@ -62,9 +108,10 @@ TEST(PIXSE_GGA, valid_strings)
     const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
 
     // Should have succeeded
-    EXPECT_TRUE(ok);
+    ASSERT_TRUE(ok);
 
     // All fields should match.
+    EXPECT_STREQ(expected.talker.data(), msg.talker.data());
     EXPECT_EQ(expected.timestamp, msg.timestamp);
     EXPECT_FLOAT_EQ(expected.latitude, msg.latitude);
     EXPECT_EQ(expected.latitude_dir, msg.latitude_dir);
