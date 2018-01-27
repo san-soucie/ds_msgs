@@ -4,6 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-uint16 humidity
-float32 temperature
-float32 pressure
+float64 humidity
+float64 temperature
+float64 pressure
