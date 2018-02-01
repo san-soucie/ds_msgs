@@ -52,8 +52,13 @@ add_message_files(
         Abort.msg
         Diag.msg
         DsHeader.msg
+        KeyBool.msg
+        KeyInt.msg
+        KeyFloat.msg
         KeyDouble.msg
         KeyString.msg
+        ParamDescription.msg
+        ParamUpdate.msg
         Status.msg
         RawData.msg
         ByteSequence.msg
