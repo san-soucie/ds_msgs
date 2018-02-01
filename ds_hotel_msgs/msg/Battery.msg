@@ -4,7 +4,10 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-uint16 idnum
+int32 idnum
+
+uint16[] voltages
+uint16[] temperatures
 
 uint16 totalVoltage     # mV
 uint16 switchTemp       # deg C
@@ -17,10 +20,26 @@ float64 balanceOnsetVoltage
 float64 balanceMaxCurrent
 uint64 balanceCommandId
 
+# Raw Batttery status info
+bool charging
+bool discharging
+int32 safetyCode
+int32 problemLocation
+int32 numScans
+int32 overflowCount
+int32 timeoutCount
+int32 timeoutLocation
+int32 uptime
+int32 fixCount
+string safetyString
+string interruptProblemLocation
+
 # Calculated status info
 uint16 errorStatus
-float64 capacityCoulombs  # Capacity of this battery, in Coulombs
-float64 chargeCoulombs    # Charge currently in the battery, in Coulombs
+float64 capacityCoulombs  # Capacity of this battery, in Amp*hours
+float64 capacityAh
+float64 chargeCoulombs    # Charge currently in the battery, in Amp*hours
+float64 chargeAh
 float64 percentFull       # Battery capacity as a percentage
 
 uint64 repeatingCommandId
