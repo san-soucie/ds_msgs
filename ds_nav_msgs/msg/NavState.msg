@@ -10,5 +10,3 @@ float64 down
 float64 roll
 float64 pitch
 float64 heading
-float64 depth
-float64 altitude
