@@ -15,3 +15,5 @@ float64 heading            # + turns to left
 float64 roll_covar
 float64 pitch_covar
 float64 heading_covar
+
+geometry_msgs/Quaternion orientation
