@@ -6,6 +6,9 @@ float32 POWERSUPPLY_NODATA = -9999.99
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+# ID number to help identify chargers
+int32 idnum
+
 # Measured output values
 float32 meas_volts
 float32 meas_amps
