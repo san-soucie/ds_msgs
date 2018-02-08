@@ -53,6 +53,8 @@ add_message_files(
   PowerSupply.msg
   HTP.msg
   Battery.msg
+  PWR.msg
+  XR.msg
 )
 
 ## Generate services in the 'srv' folder
