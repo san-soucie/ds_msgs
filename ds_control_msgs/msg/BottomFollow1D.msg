@@ -11,6 +11,9 @@ float64 ref_speed
 float64 depth_rate_filtered
 float64[5] past_altitude_values
 float64 median_altitude
+float64 env_padding_speed
+float64 env_padding_accel
+float64 step
 
 duration time_inside_env
 duration alt_bad_timer
