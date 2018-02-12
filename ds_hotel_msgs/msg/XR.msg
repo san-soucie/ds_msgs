@@ -4,4 +4,8 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float64[] xr_voltage
+float32 long_deadhour
+uint8 short_deadsecs
+float32 code_status
+float32 release_status
+float32 deadhour_status
