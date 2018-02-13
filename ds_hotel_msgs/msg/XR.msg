@@ -4,8 +4,43 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float32 long_deadhour
-uint8 short_deadsecs
-float32 code_status
-float32 release_status
-float32 deadhour_status
+float64 deadhour
+bool good
+
+#############
+# code_status
+
+uint8 C
+
+################
+# release_status
+
+# valve system control word
+uint8 V
+
+# motor release control word
+uint8 M
+
+# analog mux and nichrome word
+uint8 A
+
+# motors count down until stop driving
+uint8 M1
+uint8 M2
+
+#nichrone burn wire statuses
+uint16 N1
+uint16 N2
+
+#short deadman (reset by don't abort message)
+uint8 TR
+
+#short idle deadman (usually disabled)
+uint8 TV
+
+#long deadman
+int32 Ds
+
+#################
+# deadhour_status
+int32 Dd
