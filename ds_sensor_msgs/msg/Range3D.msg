@@ -4,6 +4,6 @@ uint8 RANGE_LOW=1
 uint8 RANGE_HIGH=2
 uint8 RANGE_VALID=3
 
-geometry_msgs/Vector3Stamped range
+geometry_msgs/PointStamped range
 
 uint8 range_validity
