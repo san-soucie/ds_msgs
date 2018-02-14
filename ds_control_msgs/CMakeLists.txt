@@ -23,7 +23,7 @@ add_message_files(
   DIRECTORY msg
   FILES
   BottomFollow1D.msg
-        ReferenceLegState.msg
+        GoalLegState.msg
 )
 
 ## Generate added messages and services with any dependencies listed here
