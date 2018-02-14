@@ -4,8 +4,8 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-geometry_msgs/Vector3 line_start
-geometry_msgs/Vector3 line_end
+geometry_msgs/Point line_start
+geometry_msgs/Point line_end
 
 float64 angle_line_segment
 float64 off_line_vect
