@@ -6,6 +6,7 @@ ds_core_msgs/DsHeader ds_header
 uint8 RANGE_INDETERMINANT=0
 uint8 RANGE_LOW=1
 uint8 RANGE_HIGH=2
+uint8 RANGE_VALID=3
 
 geometry_msgs/Vector3 range
 uint8 validity
