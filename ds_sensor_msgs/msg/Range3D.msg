@@ -11,7 +11,7 @@ uint8 RANGE_VALID=3
 uint8 TF_INVALID=0
 uint8 TF_VALID=1
 
-geometry_msgs/Vector3 range
+geometry_msgs/Vector3Stamped range
 geometry_msgs/TransformStamped range_tf
 
 uint8 range_validity
