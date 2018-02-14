@@ -14,14 +14,14 @@ float64 median_altitude
 float64 env_padding_speed
 float64 env_padding_accel
 float64 step
+float64 last_good_altitude
+float64 last_good_depth
+float64 last_good_depth_bot
 
 duration time_inside_env
 duration alt_bad_timer
 
 time last_good_altitude_time
-time last_good_altitude
-time last_good_depth
-time last_good_depth_bot
 time time_low_depth_rate
 time last_altitude_time
 

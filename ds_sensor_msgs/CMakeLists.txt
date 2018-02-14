@@ -64,6 +64,8 @@ add_message_files(
       RdiPD0.msg
       SoundSpeed.msg
       VectorMagneticField.msg
+      Range3D.msg
+      Ranges3D.msg
 )
 
 ## Generate services in the 'srv' folder
