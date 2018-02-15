@@ -53,6 +53,7 @@ add_message_files(
   PowerSupply.msg
   HTP.msg
   Battery.msg
+  PWRdevice.msg
   PWR.msg
   XR.msg
 )
