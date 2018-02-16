@@ -6,6 +6,7 @@ ds_core_msgs/DsHeader ds_header
 
 float64 deadhour
 bool good
+string address
 
 #############
 # code_status
@@ -17,29 +18,40 @@ uint8 C
 
 # valve system control word
 uint8 V
+uint8 valve_current_level
+bool valve_run
+bool valve_open
+bool valve_battery_set_on
+bool valve_battery_set_off
 
 # motor release control word
 uint8 M
+bool motor_2_drop
+bool motor_2_hold
+bool motor_1_drop
+bool motor_1_hold
 
 # analog mux and nichrome word
 uint8 A
+bool burnwire_1_drive
+bool burnwire_2_drive
 
-# motors count down until stop driving
-uint8 M1
-uint8 M2
+#M1 M2 motors count down until stop driving
+uint8 motor_1_secs
+uint8 motor_2_secs
 
-#nichrone burn wire statuses
-uint16 N1
-uint16 N2
+#N1 N2 nichrone burn wire statuses
+uint16 burnwire_1_secs
+uint16 burnwire_2_secs
 
-#short deadman (reset by don't abort message)
-uint8 TR
+#TR short deadman (reset by don't abort message)
+uint8 short_deadsecs
 
-#short idle deadman (usually disabled)
-uint8 TV
+#TV short idle deadman (usually disabled)
+uint8 short_deadsecs_idle
 
 #long deadman
-int32 Ds
+int32 deadsecs
 
 #################
 # deadhour_status
