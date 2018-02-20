@@ -3,3 +3,4 @@
 string name
 uint8 id
 uint8 cmd
+bool is_on
