@@ -4,6 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float64[] pwr_volts
+uint8[] pwr_cmd
 
 PWRdevice[] devices
