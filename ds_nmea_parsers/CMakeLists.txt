@@ -248,53 +248,55 @@ install(DIRECTORY include/${PROJECT_NAME}/
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
-catkin_add_gtest(test_hehdt src/test/test_hehdt.cpp)
-target_link_libraries(test_hehdt ${PROJECT_NAME})
+if(CATKIN_ENABLE_TESTING)
+    catkin_add_gtest(test_hehdt src/test/test_hehdt.cpp)
+    target_link_libraries(test_hehdt ${PROJECT_NAME})
 
-catkin_add_gtest(test_gga src/test/test_gga.cpp)
-target_link_libraries(test_gga ${PROJECT_NAME})
+    catkin_add_gtest(test_gga src/test/test_gga.cpp)
+    target_link_libraries(test_gga ${PROJECT_NAME})
 
-catkin_add_gtest(test_gll src/test/test_gll.cpp)
-target_link_libraries(test_gll ${PROJECT_NAME})
+    catkin_add_gtest(test_gll src/test/test_gll.cpp)
+    target_link_libraries(test_gll ${PROJECT_NAME})
 
-catkin_add_gtest(test_vtg src/test/test_vtg.cpp)
-target_link_libraries(test_vtg ${PROJECT_NAME})
+    catkin_add_gtest(test_vtg src/test/test_vtg.cpp)
+    target_link_libraries(test_vtg ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
-target_link_libraries(test_pixse_atitud ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
+    target_link_libraries(test_pixse_atitud ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_positi src/test/test_pixse_positi.cpp)
-target_link_libraries(test_pixse_positi ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_positi src/test/test_pixse_positi.cpp)
+    target_link_libraries(test_pixse_positi ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_algsts src/test/test_pixse_algsts.cpp)
-target_link_libraries(test_pixse_algsts ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_algsts src/test/test_pixse_algsts.cpp)
+    target_link_libraries(test_pixse_algsts ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_htsts src/test/test_pixse_htsts.cpp)
-target_link_libraries(test_pixse_htsts ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_htsts src/test/test_pixse_htsts.cpp)
+    target_link_libraries(test_pixse_htsts ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_status src/test/test_pixse_status.cpp)
-target_link_libraries(test_pixse_status ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_status src/test/test_pixse_status.cpp)
+    target_link_libraries(test_pixse_status ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_heave src/test/test_pixse_heave.cpp)
-target_link_libraries(test_pixse_heave ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_heave src/test/test_pixse_heave.cpp)
+    target_link_libraries(test_pixse_heave ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_speed src/test/test_pixse_speed.cpp)
-target_link_libraries(test_pixse_speed ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_speed src/test/test_pixse_speed.cpp)
+    target_link_libraries(test_pixse_speed ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_stdspd src/test/test_pixse_stdspd.cpp)
-target_link_libraries(test_pixse_stdspd ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_stdspd src/test/test_pixse_stdspd.cpp)
+    target_link_libraries(test_pixse_stdspd ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_stdpos src/test/test_pixse_stdpos.cpp)
-target_link_libraries(test_pixse_stdpos ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_stdpos src/test/test_pixse_stdpos.cpp)
+    target_link_libraries(test_pixse_stdpos ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_stdhrp src/test/test_pixse_stdhrp.cpp)
-target_link_libraries(test_pixse_stdhrp ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_stdhrp src/test/test_pixse_stdhrp.cpp)
+    target_link_libraries(test_pixse_stdhrp ${PROJECT_NAME})
 
-catkin_add_gtest(test_pixse_utmwgs src/test/test_pixse_utmwgs.cpp)
-target_link_libraries(test_pixse_utmwgs ${PROJECT_NAME})
+    catkin_add_gtest(test_pixse_utmwgs src/test/test_pixse_utmwgs.cpp)
+    target_link_libraries(test_pixse_utmwgs ${PROJECT_NAME})
 
-catkin_add_gtest(test_util src/test/test_util.cpp)
-target_link_libraries(test_util ${PROJECT_NAME})
+    catkin_add_gtest(test_util src/test/test_util.cpp)
+    target_link_libraries(test_util ${PROJECT_NAME})
+endif(CATKIN_ENABLE_TESTING)
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
