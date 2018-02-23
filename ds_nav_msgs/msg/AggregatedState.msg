@@ -4,6 +4,7 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+# Position
 FlaggedDouble northing
 FlaggedDouble easting
 FlaggedDouble down
@@ -18,3 +19,11 @@ FlaggedDouble heave_w
 FlaggedDouble p
 FlaggedDouble q
 FlaggedDouble r
+
+# Accelerations
+FlaggedDouble du_dt
+FlaggedDouble dv_dt
+FlaggedDouble dw_dt
+FlaggedDouble dp_dt
+FlaggedDouble dq_dt
+FlaggedDouble dr_dt
