@@ -29,3 +29,7 @@ bool alarm
 bool stuck
 
 int8 pseudo_bot_code
+
+# copy of the smoothing parameters to sync the reference smoother
+float64 depth_rate_d
+float64 depth_accel_d
