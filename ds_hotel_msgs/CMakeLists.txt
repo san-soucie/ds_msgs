@@ -57,6 +57,7 @@ add_message_files(
   PWRdevice.msg
   PWR.msg
   XR.msg
+  A2D2.msg
 )
 
 ## Generate services in the 'srv' folder
