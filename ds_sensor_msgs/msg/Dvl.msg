@@ -34,6 +34,11 @@ float32 speed_sound
 #####################################################################
 # Raw data
 geometry_msgs/Vector3[4] beam_unit_vec  # Geometry of each of the 4 beams
+
+# RDI sends ALTITUDE and calls it RANGE.  We convert back and send actual RANGES, such that
+# beam_unit_vec[i] * range[i] is the point where the beam hits the seafloor.  If you want
+# the raw uncorrected altitudes, look at the specific datagram message for your DVL (e.g., pd0, pd5, etc).
+# If you want altitude, simply multiply by sqrt(3)/2.
 float64[4] range
 float32[4] range_covar
 
