@@ -22,7 +22,7 @@ uint8 UNIT_PRESSURE_KPA         = 5
 uint8 UNIT_PRESSURE_MPA         = 6
 uint8 UNIT_PRESSURE_INHG        = 7
 uint8 UNIT_PRESSURE_MMHG        = 8
-uint8 UNIT_PRESSURE_MH20        = 9
+uint8 UNIT_PRESSURE_MH2O        = 9
 
 float64 DEFAULT_LATITUDE=35.0
 
