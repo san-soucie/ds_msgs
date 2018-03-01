@@ -20,3 +20,5 @@ float64 heave_w
 float64 p
 float64 q
 float64 r
+
+geometry_msgs/Quaternion orientation
