@@ -4,4 +4,4 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float32 voltage
+float64 voltage
