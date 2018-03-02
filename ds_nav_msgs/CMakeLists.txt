@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
   ds_core_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -71,6 +72,7 @@ generate_messages(
  DEPENDENCIES
  std_msgs
  ds_core_msgs
+ geometry_msgs
 )
 
 ################################################

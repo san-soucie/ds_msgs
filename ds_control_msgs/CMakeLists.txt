@@ -23,7 +23,8 @@ add_message_files(
   DIRECTORY msg
   FILES
   BottomFollow1D.msg
-        GoalLegState.msg
+  GoalLegState.msg
+  ExternalBottomFollowAlarm.msg
 )
 
 ## Generate added messages and services with any dependencies listed here
