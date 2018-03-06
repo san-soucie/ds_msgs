@@ -64,6 +64,7 @@ add_message_files(
 add_service_files(
         DIRECTORY srv
    FILES
+        AbortCmd.srv
         PowerSupplyCommand.srv
 )
 
