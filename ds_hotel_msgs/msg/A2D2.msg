@@ -4,4 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float64 voltage
+float64 raw
+float64 proc
+string units
