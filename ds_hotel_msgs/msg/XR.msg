@@ -7,6 +7,7 @@ ds_core_msgs/DsHeader ds_header
 float64 deadhour
 bool good
 string address
+uint16 idnum
 
 #############
 # code_status
