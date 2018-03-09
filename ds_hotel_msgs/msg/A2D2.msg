@@ -4,6 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-float64 raw
-float64 proc
+float64[4] raw
+float64[4] proc
 string units
