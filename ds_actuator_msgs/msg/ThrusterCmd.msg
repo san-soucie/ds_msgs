@@ -1,6 +1,10 @@
 # Timestamp for when the thruster command was issued?
 time stamp
 
+# Time-To-Live in seconds
+# The thruster command only applies for this length of time
+float32 ttl_seconds
+
 # Name of the thruster this command is intended for
 string thruster_name
 
