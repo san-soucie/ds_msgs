@@ -16,3 +16,4 @@ float64 kappa
 float64 new_goal
 float64 old_goal
 
+uint64 leg_number
