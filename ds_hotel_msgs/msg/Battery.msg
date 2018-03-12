@@ -6,14 +6,21 @@ ds_core_msgs/DsHeader ds_header
 
 int32 idnum
 
-uint16[] voltages
-uint16[] temperatures
+float32[] voltages      #V
+uint16[] temperatures   #deg C
 
-uint16 totalVoltage     # mV
+float32 maxCellVoltage
+float32 minCellVoltage
+uint16 maxCellTemp
+uint16 minCellTemp
+
+float32 totalVoltage     # V
 uint16 switchTemp       # deg C
-uint32 countFull
+uint32 countFull        # Raw counts
 uint32 countCapacity
-uint32 countFreerun     # Raw counts
+uint32 countFreerun
+int32 countUsed
+int32 countAvailable
 bool balanceEnable
 float64 balanceGain
 float64 balanceOnsetVoltage

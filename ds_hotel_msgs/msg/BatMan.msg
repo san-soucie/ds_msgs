@@ -6,10 +6,15 @@ ds_core_msgs/DsHeader ds_header
 
 int32 num_bats
 
-uint16 maxVolt
-uint16 minVolt
-uint16 maxTemp
-uint16 minTemp
+uint16 maxModuleVolt
+uint16 minModuleVolt
+uint16 maxSwitchTemp
+uint16 minSwitchTemp
+
+uint16 maxCellVolt
+uint16 minCellVolt
+uint16 maxCellTemp
+uint16 minCellTemp
 
 float64 capacityCoulombs
 float64 capacityAh
