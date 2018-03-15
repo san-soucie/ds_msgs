@@ -6,13 +6,13 @@ ds_core_msgs/DsHeader ds_header
 
 int32 num_bats
 
-uint16 maxModuleVolt
-uint16 minModuleVolt
+float32 maxModuleVolt
+float32 minModuleVolt
 uint16 maxSwitchTemp
 uint16 minSwitchTemp
 
-uint16 maxCellVolt
-uint16 minCellVolt
+float32 maxCellVolt
+float32 minCellVolt
 uint16 maxCellTemp
 uint16 minCellTemp
 
@@ -22,6 +22,6 @@ float64 chargeCoulombs
 float64 chargeAh
 float64 percentFull
 
-uint16[] moduleVolt
-uint16[] moduleAh
-uint16[] modulePercent
+float32[] moduleVolt
+float64[] moduleAh
+float64[] modulePercent

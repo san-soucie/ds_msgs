@@ -17,7 +17,7 @@ uint16 minCellTemp
 float32 totalVoltage     # V
 uint16 switchTemp       # deg C
 uint32 countFull        # Raw counts
-uint32 countCapacity
+uint32 countCapacity    # countCapacity = countUsed + countAvailable
 uint32 countFreerun
 int32 countUsed
 int32 countAvailable
