@@ -21,3 +21,7 @@ float64 capacityAh
 float64 chargeCoulombs
 float64 chargeAh
 float64 percentFull
+
+uint16[] moduleVolt
+uint16[] moduleAh
+uint16[] modulePercent
