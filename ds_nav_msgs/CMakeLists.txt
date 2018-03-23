@@ -56,6 +56,7 @@ add_message_files(
   FlaggedDouble.msg
   AggregatedState.msg
   Buoyancy.msg
+  Shift.msg
 )
 
 ## Generate services in the 'srv' folder
