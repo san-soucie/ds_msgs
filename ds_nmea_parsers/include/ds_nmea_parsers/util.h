@@ -46,5 +46,18 @@ double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept;
 /// \return
 ros::Time from_nmea_utc(int hours, int minutes, double seconds);
 
+/// @brief Convert a ZDA time to a full UTC date
+///
+/// The ZDA string provides year/month/day in addition to time.  Do the conversion.
+///
+/// \param year
+/// \param month
+/// \param day
+/// \param hours
+/// \param minutes
+/// \param seconds
+/// \return
+ros::Time from_nmea_utc_date(int year, int month, int day, int hours, int minutes, double seconds);
+
 }
 #endif //DS_NMEA_PARSERS_UTIL_H

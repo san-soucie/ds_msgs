@@ -133,6 +133,9 @@ add_library(${PROJECT_NAME}
   include/${PROJECT_NAME}/Gga.h
   src/${PROJECT_NAME}/Gga.cpp
 
+  include/${PROJECT_NAME}/Zda.h
+  src/${PROJECT_NAME}/Zda.cpp
+
   include/${PROJECT_NAME}/PixseAlgsts.h
   src/${PROJECT_NAME}/PixseAlgsts.cpp
 
@@ -260,6 +263,9 @@ if(CATKIN_ENABLE_TESTING)
 
     catkin_add_gtest(test_vtg src/test/test_vtg.cpp)
     target_link_libraries(test_vtg ${PROJECT_NAME})
+
+    catkin_add_gtest(test_zda src/test/test_zda.cpp)
+    target_link_libraries(test_zda ${PROJECT_NAME})
 
     catkin_add_gtest(test_pixse_atitud src/test/test_pixse_atitud.cpp)
     target_link_libraries(test_pixse_atitud ${PROJECT_NAME})

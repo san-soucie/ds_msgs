@@ -55,4 +55,17 @@ double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept
   return degrees + (nmea_decmin - degrees * 100) / 60;
 }
 
+ros::Time from_nmea_utc_date(int year, int month, int day, int hours, int minutes, double seconds)
+{
+  const auto second = static_cast<int>(seconds);
+  const auto m_second = static_cast<int>((seconds - second) * 1e6);
+  boost::posix_time::time_duration(hours, minutes, second, m_second);
+
+  boost::posix_time::ptime constructed(
+      boost::gregorian::date(year, month, day),
+      boost::posix_time::time_duration(hours, minutes, second, m_second));
+
+  return ros::Time::fromBoost(constructed);
+}
+
 }
