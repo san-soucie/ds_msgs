@@ -130,8 +130,20 @@ TEST(PIXSE_GGA, valid_strings)
   }
 }
 
-// Failure from sub:
-// $GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.4,M,,0000*53
+TEST(PIXSE_GGA, invalid_strings) {
+  // This is a failed string observed from the xeos
+  auto test_strs = std::list<std::pair<std::string, bool> > {
+      {"$GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.4,M,,0000*53", true},
+      {"$GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.40M,,0000*53", false}
+  };
+  for (const auto& test_pair : test_strs) {
+    auto msg = ds_nmea_msgs::Gga{};
+    const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
+
+    // Should have failed, but some tests succeed anyway.
+    EXPECT_EQ(test_pair.second, ok);
+  }
+}
 
 // Run all the tests that were declared with TEST()
 int main(int argc, char** argv)

@@ -42,8 +42,8 @@ bool from_string(Zda& output, const std::string &nmea_string)
   auto fields = std::vector<std::string>{};
   boost::split(fields, nmea_string, boost::is_any_of(",*"));
 
-  // Expect at LEAST 6 fields.
-  if (fields.size() < 6) {
+  // Expect at LEAST 7 fields.
+  if (fields.size() < 7) {
     return false;
   }
 
@@ -93,7 +93,7 @@ bool from_string(Zda& output, const std::string &nmea_string)
   }
   output.zone_offset = ros::Duration(3600 * zone_offset_hour + 60 * zone_offset_minute, 0);
 
-  if (fields.size() > 6) {
+  if (fields.size() > 7) {
     sscanf(fields.at(i++).c_str(), "%hhx", &output.checksum);
   }
 

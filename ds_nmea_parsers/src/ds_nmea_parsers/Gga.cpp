@@ -46,12 +46,12 @@ bool from_string(Gga& output, const std::string &nmea_string)
   auto fields = std::vector<std::string>{};
   boost::split(fields, nmea_string, boost::is_any_of(",*"));
 
-  // Expect at LEAST 14 fields.
-  if (fields.size() < 14) {
+  // Expect at LEAST 15 fields (14 paylaod + talker)
+  if (fields.size() < 15) {
     return false;
   }
 
-  //         1         2      3 4        5 6 7  8   9   10 |  12 13  14   15
+  //         1         2      3 4        5 6 7  8   9   10 11  12 13  14   15
   //         |         |      | |        | | |  |   |   |  |  |  |   |    |
   // $--GGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh
   //  1) Time (UTC)
@@ -105,7 +105,7 @@ bool from_string(Gga& output, const std::string &nmea_string)
   sscanf(fields.at(i++).c_str(), "%lf", &output.dgps_age);
   sscanf(fields.at(i++).c_str(), "%hu", &output.dgps_ref);
 
-  if (fields.size() > 14) {
+  if (fields.size() > 15) {
     sscanf(fields.at(i++).c_str(), "%hhx", &output.checksum);
   }
 

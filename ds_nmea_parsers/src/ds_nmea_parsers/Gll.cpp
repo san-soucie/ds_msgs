@@ -34,7 +34,7 @@ bool from_string(Gll& output, const std::string &nmea_string)
   auto fields = std::vector<std::string>{};
   boost::split(fields, nmea_string, boost::is_any_of(",*"));
 
-  // Expect at LEAST 14 fields.
+  // Expect at LEAST 7 fields.
   if (fields.size() < 7) {
     return false;
   }
