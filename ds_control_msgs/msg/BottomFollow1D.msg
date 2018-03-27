@@ -18,7 +18,10 @@ float64 step
 float64 last_good_altitude
 float64 last_good_depth
 float64 last_good_depth_bot
-
+float64 depth_floor
+float64 alarm_timeout
+float64 min_speed
+float64 speed_gain
 duration time_inside_env
 duration alt_bad_timer
 
