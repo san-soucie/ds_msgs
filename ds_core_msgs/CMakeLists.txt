@@ -65,6 +65,9 @@ add_message_files(
         IoCommand.msg
         IoCommandList.msg
         IoSMQueues.msg
+        CriticalProcess.msg
+        Countdown.msg
+        CountdownMonitor.msg
 )
 
 ## Generate services in the 'srv' folder
