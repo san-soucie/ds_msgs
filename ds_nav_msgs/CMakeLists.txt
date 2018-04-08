@@ -49,7 +49,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-        DIRECTORY msg
+  DIRECTORY msg
   FILES
   ModelState.msg
   NavState.msg
@@ -61,6 +61,11 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
+add_service_files(
+  DIRECTORY srv
+  FILES
+  ResetDvl.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
