@@ -38,7 +38,7 @@ int8 pseudo_bot_code
 float64 depth_rate_d
 float64 depth_accel_d
 
-int8 bad_altitude_hits
+uint64 bad_altitude_hits
 
 # The raw altitude after tf. This can be negative if bad, for mc descent
 float64 raw_altitude
