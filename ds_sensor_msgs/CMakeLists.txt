@@ -66,6 +66,7 @@ add_message_files(
       VectorMagneticField.msg
       Range3D.msg
       Ranges3D.msg
+      ForwardLookingStatus.msg
 )
 
 ## Generate services in the 'srv' folder
