@@ -1,3 +1,6 @@
+# Time of this message; good for logging
+time stamp
+
 # Signal an abort
 bool abort
 
