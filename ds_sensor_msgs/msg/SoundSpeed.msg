@@ -7,6 +7,7 @@ std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
 # Speed in m/s
+float64 raw_speed
 float64 speed
 float64 speed_covar
 
@@ -31,3 +32,7 @@ uint8 SV_METHOD_USER_DEFINED=4
 
 uint8 speed_method
 
+uint8 SV_STATUS_NOT_CLAMPED=0
+uint8 SV_STATUS_CLAMPED=1
+
+uint8 clamping_status
