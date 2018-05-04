@@ -52,3 +52,8 @@ float64 latitude
 # Depth calculated from pressure and latitude.
 # If latitude == DEPTH_PRESSURE_NO_DATA, then DEFAULT_LATITUDE is used
 float64 depth
+
+bool median_depth_filter_ok
+float64[] depth_buffer
+float64 median_depth
+float64 median_tol
