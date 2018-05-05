@@ -42,3 +42,11 @@ uint64 bad_altitude_hits
 
 # The raw altitude after tf. This can be negative if bad, for mc descent
 float64 raw_altitude
+
+# User push-up or push-down override
+# When the override begins
+time userDepthOverrideEngageTime
+# Whether or not the override is engaged for the current control loop
+bool userDepthOverrideEngaged
+# When the override ends
+time userDepthOverrideEndTime
