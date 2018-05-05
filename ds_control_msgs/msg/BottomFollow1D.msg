@@ -50,3 +50,5 @@ time userDepthOverrideEngageTime
 bool userDepthOverrideEngaged
 # When the override ends
 time userDepthOverrideEndTime
+# Override direction
+int8 override_depth_direction
