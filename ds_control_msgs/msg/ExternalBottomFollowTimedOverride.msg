@@ -1,6 +1,6 @@
 std_msgs/Header header
 
-time timeout
+duration timeout
 int8 override_depth_direction
 
 int8 DRIVE_UP=0
