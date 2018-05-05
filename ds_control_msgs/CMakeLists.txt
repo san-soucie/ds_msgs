@@ -25,6 +25,7 @@ add_message_files(
   BottomFollow1D.msg
   GoalLegState.msg
   ExternalBottomFollowAlarm.msg
+  ExternalBottomFollowTimedOverride.msg
 )
 
 ## Generate added messages and services with any dependencies listed here
