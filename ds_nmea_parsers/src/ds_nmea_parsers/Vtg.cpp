@@ -27,7 +27,7 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   // but at lest we don't have a lot of try/catch blocks.
 
   auto fields = std::vector<std::string>{};
-  boost::split(fields, nmea_string, boost::is_any_of(",*"));
+  boost::split(fields, nmea_string, boost::is_any_of(",*"), boost::token_compress_off);
 
   // Expect at LEAST 10 fields.
   if (fields.size() < 10) {
@@ -35,9 +35,9 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   }
 
   // VTG Track Made Good and Ground Speed
-  //        1   2 3   4 5   6 7   8 9
-  //        |   | |   | |   | |   | |
-  // $--VTG,x.x,T,x.x,M,x.x,N,x.x,K*hh
+  //        1   2 3   4 5   6 7   8 9 10
+  //        |   | |   | |   | |   | | |
+  // $--VTG,x.x,T,x.x,M,x.x,N,x.x,K,N*hh
   // 1) Track Degrees
   // 2) T = True
   // 3) Track Degrees
@@ -59,6 +59,7 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   if(fields.at(i++).compare("T")) {
     return false;
   }
+
   sscanf(fields.at(i++).c_str(), "%lf", &output.track_degrees_magnetic);
   if(fields.at(i++).compare("M")) {
     return false;
@@ -71,9 +72,10 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   if(fields.at(i++).compare("K")) {
     return false;
   }
+  sscanf(fields.at(i++).c_str(), "%1c", &output.mode);
 
-  if (fields.size() > 10) {
-    sscanf(fields.at(i++).c_str(), "%hhx", &output.checksum);
+  if (fields.size() > 9) {
+    sscanf(fields.at(i++).c_str(), "%hhX", &output.checksum);
   }
 
   return true;

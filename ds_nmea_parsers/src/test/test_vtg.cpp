@@ -7,11 +7,11 @@
 
 using namespace ds_nmea_msgs;
 
-TEST(PIXSE_GGA, valid_strings)
+TEST(VTG, valid_strings)
 {
 
   auto gen = [](
-      std::string talker, double degrees_true, double degrees_mag, double speed_knots, double speed_kph, uint8_t checksum)
+      std::string talker, double degrees_true, double degrees_mag, double speed_knots, double speed_kph, uint8_t mode, uint8_t checksum)
   {
     auto msg = ds_nmea_msgs::Vtg{};
     msg.talker = talker;
@@ -19,6 +19,7 @@ TEST(PIXSE_GGA, valid_strings)
     msg.track_degrees_magnetic = degrees_mag;
     msg.speed_knots = speed_knots;
     msg.speed_km_per_hour = speed_kph;
+    msg.mode = mode;
     msg.checksum = checksum;
     return msg;
   };
@@ -27,11 +28,15 @@ TEST(PIXSE_GGA, valid_strings)
       std::list<std::pair<std::string, ds_nmea_msgs::Vtg>>{
           {
               "$GNVTG,,T,,M,,N,,K,N*32\r\n",
-              gen("GN", Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, 0x32)
+              gen("GN", Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, Vtg::VTG_NO_DATA, 'N', 0x32)
           },
           {
               "$GNVTG,285.09,T,,M,0.84,N,1.6,K,A*1E\r\n",
-              gen("GN", 285.09, Vtg::VTG_NO_DATA, 0.84, 1.6, 0x1E)
+              gen("GN", 285.09, Vtg::VTG_NO_DATA, 0.84, 1.6, 'A', 0x1E)
+          },
+          {
+              "$GNVTG,176.77,T,,M,0.00,N,0.0,K,A*13\r\n",
+              gen("GN", 176.77, Vtg::VTG_NO_DATA, 0.00, 0.0, 'A', 0x13)
           }
       };
 
@@ -51,6 +56,8 @@ TEST(PIXSE_GGA, valid_strings)
     EXPECT_FLOAT_EQ(expected.track_degrees_magnetic, msg.track_degrees_magnetic);
     EXPECT_FLOAT_EQ(expected.speed_knots, msg.speed_knots);
     EXPECT_FLOAT_EQ(expected.speed_km_per_hour, msg.speed_km_per_hour);
+    EXPECT_EQ(expected.mode, msg.mode);
+    EXPECT_FLOAT_EQ(expected.checksum, msg.checksum);
   }
 }
 
