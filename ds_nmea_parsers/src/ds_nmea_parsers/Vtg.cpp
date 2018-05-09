@@ -50,6 +50,7 @@ bool from_string(Vtg& output, const std::string &nmea_string)
 
   auto i = 0;
   char talker[2];
+  char mode;
   if (!sscanf(fields.at(i++).c_str(), "$%2cVTG", talker)) {
     return false;
   }
@@ -72,7 +73,8 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   if(fields.at(i++).compare("K")) {
     return false;
   }
-  sscanf(fields.at(i++).c_str(), "%1c", &output.mode);
+  sscanf(fields.at(i++).c_str(), "%1c", &mode);
+  output.mode = std::string{&mode, 1};
 
   if (fields.size() > 9) {
     sscanf(fields.at(i++).c_str(), "%hhX", &output.checksum);

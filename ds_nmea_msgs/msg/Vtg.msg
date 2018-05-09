@@ -25,5 +25,5 @@ float64    track_degrees_true
 float64    track_degrees_magnetic
 float64    speed_knots
 float64    speed_km_per_hour
-uint8      mode
+string     mode
 uint8      checksum

@@ -56,7 +56,7 @@ TEST(VTG, valid_strings)
     EXPECT_FLOAT_EQ(expected.track_degrees_magnetic, msg.track_degrees_magnetic);
     EXPECT_FLOAT_EQ(expected.speed_knots, msg.speed_knots);
     EXPECT_FLOAT_EQ(expected.speed_km_per_hour, msg.speed_km_per_hour);
-    EXPECT_EQ(expected.mode, msg.mode);
+    EXPECT_STREQ(expected.mode.data(), msg.mode.data());
     EXPECT_FLOAT_EQ(expected.checksum, msg.checksum);
   }
 }
