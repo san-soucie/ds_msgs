@@ -30,7 +30,7 @@ bool from_string(Vtg& output, const std::string &nmea_string)
   boost::split(fields, nmea_string, boost::is_any_of(",*"), boost::token_compress_off);
 
   // Expect at LEAST 10 fields.
-  if (fields.size() < 10) {
+  if (fields.size() <= 10) {
     return false;
   }
 

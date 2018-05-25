@@ -134,7 +134,8 @@ TEST(PIXSE_GGA, invalid_strings) {
   // This is a failed string observed from the xeos
   auto test_strs = std::list<std::pair<std::string, bool> > {
       {"$GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.4,M,,0000*53", true},
-      {"$GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.40M,,0000*53", false}
+      {"$GPGGA,223513.000,4131.5356,N,07039.9989W0,1,08,0.9,22.8,M,-34.40M,,0000*53", false},
+      {"$GPGGA,202819.000,1343.7726,N,04501.4020,W,1,10,0.7,8.4,M,-26.3,M,,0000*69\r\n", true}
   };
   for (const auto& test_pair : test_strs) {
     auto msg = ds_nmea_msgs::Gga{};

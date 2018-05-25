@@ -61,6 +61,22 @@ TEST(VTG, valid_strings)
   }
 }
 
+TEST(VTG, InvalidStrings){
+// This is a failed string observed from the xeos
+auto test_strs = std::list<std::pair<std::string, bool> > {
+    {"$GNVTG,0,2.77T,,,M,.040,N0\n", false},
+    {".7,KAG*10\r\n", false},
+    {"$GNVTG,162.87,T,,M,0.84,N,16G,K,A112\r\n", false}
+};
+for (const auto& test_pair : test_strs) {
+auto msg = ds_nmea_msgs::Vtg{};
+const auto ok = ds_nmea_msgs::from_string(msg, test_pair.first);
+
+// Should have failed, but some tests succeed anyway.
+EXPECT_EQ(test_pair.second, ok);
+}
+}
+
 // Run all the tests that were declared with TEST()
 int main(int argc, char** argv)
 {
