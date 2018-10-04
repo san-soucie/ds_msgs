@@ -77,6 +77,7 @@ add_service_files(
   FILES
   VoidCmd.srv
         IoSMcommand.srv
+        StringCmd.srv
   )
 
 ## Generate actions in the 'action' folder
