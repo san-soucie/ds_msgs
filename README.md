@@ -1,6 +1,6 @@
 # ds_msgs
 
-This is a catch-all package for common vehicle-independent message types.  
+This is a catch-all package for common vehicle-independent message types.
 This package should contain only ROS ```msg``` and ```srv``` files.
 
 All messages contained within should be vehicle-independent and reflect core
@@ -16,18 +16,18 @@ or image interpretation or whatever should live elsewhere.
 
 ## Getting Started
 
-This is a DSL ROS package intended to be run as part of the larger DSL ROS echosystem.
+This is a DSL ROS package intended to be run as part of the larger DSL ROS ecosystem.
 See the [Sentry Wiki](http://sentry-wiki.whoi.edu/ROS_Upgrade)
 
 ### Prerequisites
 
 This package stands on its own.  It's a prerequisite for pretty
-much everything. 
+much everything.
 
 ### Installing
 
-You should generally be installing this as part of a rosinstall file.  
-If handled seperately though, simply add to a catkin workspace and 
+You should generally be installing this as part of a rosinstall file.
+If handled seperately though, simply add to a catkin workspace and
 build with:
 
 ```
@@ -50,5 +50,3 @@ We use [SemVer](http://semver.org/) for versioning.
 
 * IFREMER for their architectural support
 * Louis Whitcomb et. al. for his message definitions to look over
-
-
