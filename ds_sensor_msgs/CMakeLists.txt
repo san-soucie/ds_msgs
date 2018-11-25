@@ -69,6 +69,7 @@ add_message_files(
       ForwardLookingStatus.msg
       Velocity3D.msg
       NortekVectorSystem.msg
+      Frequency.msg
 )
 
 ## Generate services in the 'srv' folder
