@@ -10,7 +10,8 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
-        geometry_msgs
+  geometry_msgs
+  control_msgs
   ds_core_msgs
 )
 
@@ -26,6 +27,15 @@ add_message_files(
   GoalLegState.msg
   ExternalBottomFollowAlarm.msg
   ExternalBottomFollowTimedOverride.msg
+  RovAutoState.msg
+  RovControllerState.msg
+)
+
+# Generate services
+add_service_files(
+  DIRECTORY srv
+  FILES
+  RovAutoCommand.srv
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -33,11 +43,12 @@ generate_messages(
  DEPENDENCIES
  std_msgs
  ds_core_msgs
-        geometry_msgs
+ geometry_msgs
+ control_msgs
 )
 
 catkin_package(
-   CATKIN_DEPENDS message_generation std_msgs ds_core_msgs geometry_msgs
+   CATKIN_DEPENDS message_generation std_msgs ds_core_msgs geometry_msgs control_msgs
 )
 
 ###########
