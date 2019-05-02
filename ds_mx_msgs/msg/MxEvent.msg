@@ -4,5 +4,5 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# The entire call string, starting at the root and ending at the current primitive
-MxTaskStatus[] active_tasks
+# A list of keys, starting from most general to least general
+string[] keys
