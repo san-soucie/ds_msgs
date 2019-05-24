@@ -1,5 +1,6 @@
 # This includes instructions on how to draw a single mission element
 string role
+string label         # An annotation label to add; generally blank
 string wellknowntext # Well-known text, ALWAYS in lat/lon;
                      # see https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry
                      # Currently, only Point, LineString, and Polygon are supported
