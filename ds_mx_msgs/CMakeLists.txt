@@ -58,6 +58,9 @@ add_message_files(
   MxSharedParams.msg
   MissionDisplay.msg
   MissionElementDisplay.msg
+  TaskTreeVertex.msg
+  TaskTreeEdge.msg
+  TaskTreeGraph.msg
 )
 
 ## Generate services in the 'srv' folder
