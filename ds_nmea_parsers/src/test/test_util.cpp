@@ -92,6 +92,32 @@ TEST(NMEA_DECMIN, valid_conversions)
     ASSERT_FLOAT_EQ(expected, result);
   }
 }
+
+TEST(NMEA_TO_UTC_STR, rounding)
+{
+  const auto test_pairs = 
+      std::list<std::pair<double,std::string>>{
+          {0, "000000.000"},
+          {15, "000015.000"},
+          {75, "000115.000"},
+          {3675, "010115.000"},
+          {15.553, "000015.553"},
+          {75.292, "000115.292"},
+          {3675.00002, "010115.000"}
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    ros::Time t;
+    t.fromSec(test_pair.first);
+    auto expected = test_pair.second;
+    const auto actual = ds_nmea_msgs::to_nmea_utc_str(t);
+    
+    // should have succeeded
+    ASSERT_EQ(expected, actual);
+  }
+  
+}
+
 // Run all the tests that were declared with TEST()
 int main(int argc, char** argv)
 {

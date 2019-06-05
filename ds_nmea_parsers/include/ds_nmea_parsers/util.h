@@ -75,6 +75,12 @@ double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept;
 /// \return
 ros::Time from_nmea_utc(int hours, int minutes, double seconds);
 
+/// @brief Convert a full rostime into a UTC clock time string
+///
+/// \param time
+/// \return
+std::string to_nmea_utc_str(ros::Time time);
+
 /// @brief Convert a ZDA time to a full UTC date
 ///
 /// The ZDA string provides year/month/day in addition to time.  Do the conversion.

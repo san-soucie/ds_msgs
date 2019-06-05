@@ -78,6 +78,16 @@ ros::Time from_nmea_utc(int hours, int minutes, double seconds)
   return ros::Time::fromBoost(adjusted);
 }
 
+std::string to_nmea_utc_str(ros::Time time)
+{
+  int h = (time.sec / 3600) % 24;
+  int m = (time.sec / 60) % 60;
+  double s = time.sec % 60 + (time.nsec / 1.0e9);
+  char buf[50];
+  sprintf(buf, "%02d%02d%06.3f", h, m, s);
+  return std::string(buf);
+}
+
 double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept
 {
   const auto degrees = static_cast<int>(nmea_decmin / 100);
