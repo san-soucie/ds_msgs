@@ -94,5 +94,9 @@ std::string to_nmea_utc_str(ros::Time time);
 /// \return
 ros::Time from_nmea_utc_date(int year, int month, int day, int hours, int minutes, double seconds);
 
+std::string to_nmea_lat_string(double lat_deg, double minutes = 0.0, double seconds = 0.0);
+
+std::string to_nmea_lon_string(double lon_deg, double minutes = 0.0, double seconds = 0.0);
+
 }
 #endif //DS_NMEA_PARSERS_UTIL_H

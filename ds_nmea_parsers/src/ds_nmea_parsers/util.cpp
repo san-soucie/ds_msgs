@@ -88,6 +88,48 @@ std::string to_nmea_utc_str(ros::Time time)
   return std::string(buf);
 }
 
+std::string to_nmea_lat_string(double lat_deg, double minutes, double seconds){
+  if (lat_deg < -90.0
+      || lat_deg > 90.0
+      || minutes < 0.0
+      || minutes >= 60
+      || seconds < 0.0
+      || seconds >= 60){
+    return "NULL,N,";
+  }
+  bool north = (lat_deg >= 0);
+  int deg = abs(lat_deg);
+  double deg_decimal = lat_deg * (north ? 1.0 : -1.0) - deg;
+  char buf[50];
+  minutes += seconds / 60.0;
+  // If no minutes or seconds are defined, use the degree decimal
+  if (minutes == 0)
+    minutes = deg_decimal * 60.0;
+  sprintf(buf, "%02d%09.6f,%c,", deg, minutes, (north ? 'N' : 'S' ));
+  return std::string(buf);
+}
+
+std::string to_nmea_lon_string(double lon_deg, double minutes, double seconds){
+  if (lon_deg < -180.0
+      || lon_deg > 180.0
+      || minutes < 0.0
+      || minutes >= 60
+      || seconds < 0.0
+      || seconds >= 60){
+    return "NULL,E,";
+  }
+  bool east = (lon_deg >= 0);
+  int deg = abs(lon_deg);
+  double deg_decimal = lon_deg * (east ? 1.0 : -1.0) - deg;
+  char buf[50];
+  minutes += seconds / 60.0;
+  // If no minutes or seconds are defined, use the degree decimal
+  if (minutes == 0)
+    minutes = deg_decimal * 60.0;
+  sprintf(buf, "%03d%09.6f,%c,", deg, minutes, (east ? 'E' : 'W' ));
+  return std::string(buf);
+}
+
 double nmea_dec_min_dec_degrees(double nmea_decmin) noexcept
 {
   const auto degrees = static_cast<int>(nmea_decmin / 100);
