@@ -50,6 +50,8 @@ add_message_files(DIRECTORY msg
   Vector3_F32.msg
   Point_F32.msg
   AcousticModemData.msg
+  MicromodemData.msg
+  ModemData.msg
   )
 
 ## Generate services in the 'srv' folder
