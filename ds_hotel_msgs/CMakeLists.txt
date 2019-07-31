@@ -52,6 +52,7 @@ add_message_files(
   FILES
   PowerSupply.msg
   HTP.msg
+  HTPGL.msg
   BatMan.msg
   Battery.msg
   PWRdevice.msg
