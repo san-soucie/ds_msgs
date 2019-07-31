@@ -6,4 +6,5 @@ uint8 RANGE_VALID=3
 
 geometry_msgs/PointStamped range
 
+float32 range_quality
 uint8 range_validity
