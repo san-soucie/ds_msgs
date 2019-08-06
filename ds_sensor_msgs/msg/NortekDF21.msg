@@ -20,19 +20,19 @@ float64 dvl_time
 
 #  All distances are in m, velocities in m/s, intensities in dB
 
-uint16 version
+uint8 version
 uint8 offsetOfData
-uint8 serialNumber
+uint32 serialNumber
 uint8 year
 uint8 month
 uint8 day
 uint8 hour
 uint8 minute
 uint8 seconds
-uint8 microSeconds100
-uint8 nBeams
-uint8 error
-uint8 status # MAY NOT BE VALID
+uint16 microSeconds
+uint16 nBeams
+uint32 error
+uint32 status # MAY NOT BE VALID
 float64 soundSpeed
 float64 temperature
 float64 pressure
