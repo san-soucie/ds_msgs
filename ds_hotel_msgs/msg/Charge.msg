@@ -3,8 +3,5 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-#four 16 bit charge values, float
+#four 16 bit charge values in coulombs, float
 float32[4] charge
-
-#four charge accumulator status numbers
-int16[4] status
