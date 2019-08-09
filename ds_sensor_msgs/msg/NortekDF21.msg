@@ -41,12 +41,12 @@ float64 pressure
 # Beam Data #
 #############
 
-float64[4] velBeam    #Velocities for each beam
-float64[4] distBeam   #Distances for each beam
-float64[4] fomBeam    #Figure of merit for each beam
-float64[4] timeDiff1Beam  #DT1 for each beam
-float64[4] timeDiff2Beam  #DT2 for each beam
-float64[4] timeVelEstBeam #Duration of velocity estimate for each beam
+float32[4] velBeam    #Velocities for each beam
+float32[4] distBeam   #Distances for each beam
+float32[4] fomBeam    #Figure of merit for each beam
+float32[4] timeDiff1Beam  #DT1 for each beam
+float32[4] timeDiff2Beam  #DT2 for each beam
+float32[4] timeVelEstBeam #Duration of velocity estimate for each beam
 
 #############
 # XYZ Data #
