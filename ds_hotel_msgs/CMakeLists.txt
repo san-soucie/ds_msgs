@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   DIRECTORY msg
   FILES
+  Charge.msg
   PowerSupply.msg
   HTP.msg
   HTPGL.msg
@@ -68,6 +69,7 @@ add_service_files(
    FILES
         AbortCmd.srv
         PowerSupplyCommand.srv
+		ChargeCmd.srv
 )
 
 ## Generate actions in the 'action' folder
