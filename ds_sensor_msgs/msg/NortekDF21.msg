@@ -32,10 +32,10 @@ uint8 seconds
 uint16 microSeconds
 uint16 nBeams
 uint32 error
-uint32 status # MAY NOT BE VALID
-float64 speed_sound
-float64 temperature
-float64 pressure
+uint32 status
+float32 speed_sound
+float32 temperature
+float32 pressure
 
 #############
 # Beam Data #
@@ -51,23 +51,23 @@ float32[4] timeVelEstBeam #Duration of velocity estimate for each beam
 #############
 # XYZ Data #
 #############
-float64 velX  #Velocity X
-float64 velY  #Velocity Y
-float64 velZ1 #Velocity Z1
-float64 velZ2 #Velocity Z2
-float64 fomX  #Figure of Merit X
-float64 fomY  #Figure of Merit Y
-float64 fomZ1 #Figure of Merit Z1
-float64 fomZ2 #Figure of Merit Z2
-float64 timeDiff1X    #Time from trigger to center of bottom echo
-float64 timeDiff1Y    #Same as above
-float64 timeDiff1Z1   #Same as above
-float64 timeDiff1Z2   #Same as above
-float64 timeDiff2X    #Time from start of NMEA output msg to center of bottom echo
-float64 timeDiff2Y    #Same as above
-float64 timeDiff2Z1   #Same as above
-float64 timeDiff2Z2   #Same as above
-float64 timeVelEstX   #Duration of velocity estimate for each component
-float64 timeVelEstY   #Same as above
-float64 timeVelEstZ1  #Same as above
-float64 timeVelEstZ2  #Same as above
+float32 velX  #Velocity X
+float32 velY  #Velocity Y
+float32 velZ1 #Velocity Z1
+float32 velZ2 #Velocity Z2
+float32 fomX  #Figure of Merit X
+float32 fomY  #Figure of Merit Y
+float32 fomZ1 #Figure of Merit Z1
+float32 fomZ2 #Figure of Merit Z2
+float32 timeDiff1X    #Time from trigger to center of bottom echo
+float32 timeDiff1Y    #Same as above
+float32 timeDiff1Z1   #Same as above
+float32 timeDiff1Z2   #Same as above
+float32 timeDiff2X    #Time from start of NMEA output msg to center of bottom echo
+float32 timeDiff2Y    #Same as above
+float32 timeDiff2Z1   #Same as above
+float32 timeDiff2Z2   #Same as above
+float32 timeVelEstX   #Duration of velocity estimate for each component
+float32 timeVelEstY   #Same as above
+float32 timeVelEstZ1  #Same as above
+float32 timeVelEstZ2  #Same as above
