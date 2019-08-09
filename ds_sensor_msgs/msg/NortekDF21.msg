@@ -33,7 +33,7 @@ uint16 microSeconds
 uint16 nBeams
 uint32 error
 uint32 status # MAY NOT BE VALID
-float64 soundSpeed
+float64 speed_sound
 float64 temperature
 float64 pressure
 
