@@ -4,6 +4,24 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+################################
+# Standard DVL type disclaimer #
+################################
+
+# Standard array with one piston transducer for each beam
+# If you have 4-5 individual disks on your DVL, use this one.
+# Examples include Sonardyne Syrinx, Nortek DVLs, and RDI Workhorse
+uint8 DVL_TYPE_PISTON=0
+
+# Newfangled phased-array DVL.  If you have one giant disk with complicated stuff on it,
+# probably this one.
+# Examples include newer RDI DVLs such as pathfinder, pioneer, and tasman.
+uint8 DVL_TYPE_PHASED_ARRAY=1
+
+# Type of DVL array employed (see above).  Necessary when
+# deciding how to apply sound velocity corrections
+uint8 dvl_type
+
 #################
 # DVL processed #
 #################
