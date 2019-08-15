@@ -60,7 +60,6 @@ add_message_files(
       Gyro.msg
       Ins.msg
       NortekDF21.msg
-      NortekDF21Status.msg
       OxygenConcentration.msg
       PhinsStandard.msg
       RdiPD0.msg
