@@ -53,6 +53,8 @@ add_message_files(DIRECTORY msg
   AcousticModemData.msg
   MicromodemData.msg
   ModemData.msg
+  QueueDefinition.msg
+  TDMASlots.msg
   )
 
 ## Generate services in the 'srv' folder
