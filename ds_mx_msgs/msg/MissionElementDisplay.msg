@@ -9,6 +9,7 @@ uint8[16] task_uuid
 # Numbers are assigned somewhat randomly
 string ROLE_POINT_LAUNCH="launch"
 string ROLE_IDLE="idle"
+string ROLE_JOYSTICK="joystick"
 
 string ROLE_TRACKLINE="trackline"
 string ROLE_TRACKLINE_CONNECTING="connecting_trackline"

@@ -10,8 +10,9 @@ add_compile_options(-std=c++11)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
-        geometry_msgs
+  geometry_msgs
   ds_core_msgs
+  ds_nav_msgs
 )
 
 ################################################
@@ -26,6 +27,7 @@ add_message_files(
   GoalLegState.msg
   ExternalBottomFollowAlarm.msg
   ExternalBottomFollowTimedOverride.msg
+  GoalLegLatLon.msg
 )
 
 ## Generate added messages and services with any dependencies listed here
@@ -33,11 +35,12 @@ generate_messages(
  DEPENDENCIES
  std_msgs
  ds_core_msgs
-        geometry_msgs
+ ds_nav_msgs
+ geometry_msgs
 )
 
 catkin_package(
-   CATKIN_DEPENDS message_generation std_msgs ds_core_msgs geometry_msgs
+   CATKIN_DEPENDS message_generation std_msgs ds_core_msgs ds_nav_msgs geometry_msgs
 )
 
 ###########
