@@ -4,23 +4,32 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+###################
+# Thruster Header #
+###################
+
+float32 dle
+float32 stx
+float32 stn
+float32 cmd
+
 #######################
 # Extended Status MSG #
 #######################
 
-float64 speed_loop_enable_status
-float64 minute_tag
-float64 second_tag
-float64 microsecond_tick_tag
-float64 prop_dir
-float64 prop_pwm
-float64 tach_msb
-float64 tach_lsb
-float64 fault_status
-float64 reset_status
-float64 speed_loop_interval
-float64 tach_err_count
-float64 voltage_msb
-float64 voltage_lsb
-float64 current_msb
-float64 current_lsb
+float32 speed_loop_enable_status
+float32 minute_tag
+float32 second_tag
+float32 microsecond_tick_tag
+float32 prop_dir
+float32 prop_pwm
+float32 tach_msb
+float32 tach_lsb
+float32 fault_status
+float32 reset_status
+float32 speed_loop_interval
+float32 tach_err_count
+float32 voltage_msb
+float32 voltage_lsb
+float32 current_msb
+float32 current_lsb
