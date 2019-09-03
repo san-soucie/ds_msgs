@@ -4,21 +4,23 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# Timestamp for when the thruster command was issued?
-time stamp
+#######################
+# Extended Status MSG #
+#######################
 
-# Time-To-Live in seconds
-# The thruster command only applies for this length of time
-# TTL checking in most drivers is approximate; this is a
-# minimum live time.  This flag should be checked at least every
-# health check interval
-float32 ttl_seconds
-
-# Name of the thruster this command is intended for
-string thruster_name
-
-# Commanded value for the thruster (typically current)
-float32 cmd_value
-
-# Desired force produced by cmd_value
-float32 cmd_newtons
+float64 speed_loop_enable_status
+float64 minute_tag
+float64 second_tag
+float64 microsecond_tick_tag
+float64 prop_dir
+float64 prop_pwm
+float64 tach_msb
+float64 tach_lsb
+float64 fault_status
+float64 reset_status
+float64 speed_loop_interval
+float64 tach_err_count
+float64 voltage_msb
+float64 voltage_lsb
+float64 current_msb
+float64 current_lsb
