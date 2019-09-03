@@ -64,6 +64,8 @@ add_message_files(DIRECTORY msg
   PixseHspos.msg
   Vtg.msg
   Zda.msg
+  Tro.msg
+  Inf.msg
 )
 
 ## Generate services in the 'srv' folder
