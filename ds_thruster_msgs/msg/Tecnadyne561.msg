@@ -8,10 +8,10 @@ ds_core_msgs/DsHeader ds_header
 # Thruster Header #
 ###################
 
-float32 dle
-float32 stx
-float32 stn
-float32 cmd
+uint16 dle
+uint16 stx
+uint16 stn
+uint16 cmd
 
 #######################
 # Extended Status MSG #
