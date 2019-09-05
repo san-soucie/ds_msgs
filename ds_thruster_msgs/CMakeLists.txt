@@ -53,6 +53,7 @@ add_message_files(
     Tecnadyne561.msg
     Thruster.msg
     ThrusterState.msg
+    ThrusterParams.msg
 )
 
 ## Generate services in the 'srv' folder
