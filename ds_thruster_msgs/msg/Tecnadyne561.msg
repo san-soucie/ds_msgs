@@ -8,10 +8,10 @@ ds_core_msgs/DsHeader ds_header
 # Thruster Header #
 ###################
 
-uint16 dle
-uint16 stx
-uint16 stn
-uint16 cmd
+float32 dle
+float32 stx
+float32 stn
+float32 cmd
 
 #######################
 # Extended Status MSG #
@@ -33,3 +33,10 @@ float32 voltage_msb
 float32 voltage_lsb
 float32 current_msb
 float32 current_lsb
+float32 footer_DLE
+
+######################
+# Write Digital Data #
+######################
+
+float32 ack
