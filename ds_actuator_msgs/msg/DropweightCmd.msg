@@ -1,0 +1,9 @@
+time stamp
+
+int32 IDX_DESCENT=0
+int32 IDX_ASCENT=1
+int32 IDX_ANCHOR=2
+
+# This is an array of dropweight booleans.  If the bool at a particular index
+# is true, the weight should be dropped.
+bool[] drop

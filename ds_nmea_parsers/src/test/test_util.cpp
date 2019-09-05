@@ -92,6 +92,112 @@ TEST(NMEA_DECMIN, valid_conversions)
     ASSERT_FLOAT_EQ(expected, result);
   }
 }
+
+TEST(NMEA_TO_UTC_STR, rounding)
+{
+  const auto test_pairs = 
+      std::list<std::pair<double,std::string>>{
+          {0, "000000.000"},
+          {15, "000015.000"},
+          {75, "000115.000"},
+          {3675, "010115.000"},
+          {15.553, "000015.553"},
+          {75.292, "000115.292"},
+          {3675.00002, "010115.000"}
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    ros::Time t;
+    t.fromSec(test_pair.first);
+    auto expected = test_pair.second;
+    const auto actual = ds_nmea_msgs::to_nmea_utc_str(t);
+    
+    // should have succeeded
+    ASSERT_EQ(expected, actual);
+  }
+  
+}
+
+TEST(TO_NMEA_LAT_STRING, pass)
+{
+  const auto test_pairs =
+      std::list<std::pair<std::string,std::string>>{
+          {ds_nmea_msgs::to_nmea_lat_string(0.0), "0000.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, 0.0), "0000.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, 0.0, 0.0), "0000.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(15.0, 0.0, 0.0), "1500.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, 15.0, 0.0), "0015.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(15.25, 0.0, 0.0), "1515.000000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(15, 15, 30), "1515.500000,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(-35, 15, 0.0), "3515.000000,S,"}
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    auto expected = test_pair.second;
+    auto actual = test_pair.first;
+    ASSERT_EQ(expected, actual);
+  }
+}
+
+TEST(TO_NMEA_LAT_STRING, null)
+{
+  const auto test_pairs =
+      std::list<std::pair<std::string,std::string>>{
+          {ds_nmea_msgs::to_nmea_lat_string(91), "NULL,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, 61), "NULL,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, 0.0, 61.0), "NULL,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(-100, 0.0, 0.0), "NULL,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(0.0, -15.0, 0.0), "NULL,N,"},
+          {ds_nmea_msgs::to_nmea_lat_string(15.25, 0.0, -15.0), "NULL,N,"},
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    auto expected = test_pair.second;
+    auto actual = test_pair.first;
+    ASSERT_EQ(expected, actual);
+  }
+}
+
+TEST(TO_NMEA_LON_STRING, pass)
+{
+  const auto test_pairs =
+      std::list<std::pair<std::string,std::string>>{
+          {ds_nmea_msgs::to_nmea_lon_string(0.0), "00000.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, 0.0), "00000.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, 0.0, 0.0), "00000.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(15.0, 0.0, 0.0), "01500.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, 15.0, 0.0), "00015.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(15.25, 0.0, 0.0), "01515.000000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(15, 15, 30), "01515.500000,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(-35, 15, 0.0), "03515.000000,W,"}
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    auto expected = test_pair.second;
+    auto actual = test_pair.first;
+    ASSERT_EQ(expected, actual);
+  }
+}
+
+TEST(TO_NMEA_LON_STRING, null)
+{
+  const auto test_pairs =
+      std::list<std::pair<std::string,std::string>>{
+          {ds_nmea_msgs::to_nmea_lon_string(181), "NULL,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, 61), "NULL,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, 0.0, 61.0), "NULL,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(-200, 0.0, 0.0), "NULL,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(0.0, -15.0, 0.0), "NULL,E,"},
+          {ds_nmea_msgs::to_nmea_lon_string(15.25, 0.0, -15.0), "NULL,E,"},
+      };
+  for (const auto& test_pair : test_pairs)
+  {
+    auto expected = test_pair.second;
+    auto actual = test_pair.first;
+    ASSERT_EQ(expected, actual);
+  }
+}
+
 // Run all the tests that were declared with TEST()
 int main(int argc, char** argv)
 {

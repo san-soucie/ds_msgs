@@ -54,6 +54,7 @@ add_message_files(
     ServoState.msg
     ThrusterCmd.msg
     ThrusterState.msg
+    DropweightCmd.msg
 )
 
 ## Generate services in the 'srv' folder

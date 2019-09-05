@@ -58,6 +58,7 @@ add_message_files(
   Buoyancy.msg
   Shift.msg
   DeadReck.msg
+  LatLon.msg
 )
 
 ## Generate services in the 'srv' folder

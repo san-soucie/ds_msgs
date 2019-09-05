@@ -68,7 +68,8 @@ add_message_files(
         CriticalProcess.msg
         Countdown.msg
         CountdownMonitor.msg
-	StringStamped.msg
+        StringStamped.msg
+        ClockOffset.msg
 )
 
 ## Generate services in the 'srv' folder

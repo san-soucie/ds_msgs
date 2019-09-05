@@ -28,7 +28,7 @@ float64 DEFAULT_LATITUDE=35.0
 
 # Tared pressure value. (in decibar)
 # If 'tare' != DEPTH_PESSURE_NO_DATA, then this value is equal to "raw_pressure - tare"
-# If 'tare' == DPETH_PESSURE_NO_DATA, then 'tare' is effectively 0
+# If 'tare' == DEPTH_PESSURE_NO_DATA, then 'tare' is effectively 0
 float64 pressure
 float64 pressure_covar
 
