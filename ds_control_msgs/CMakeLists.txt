@@ -37,7 +37,6 @@ add_service_files(
   DIRECTORY srv
   FILES
   RovAutoCommand.srv
-  GoalLegLatLon.msg
 )
 
 ## Generate added messages and services with any dependencies listed here
