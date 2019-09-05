@@ -30,6 +30,11 @@ add_message_files(
   ExternalBottomFollowTimedOverride.msg
   RovAutoState.msg
   RovControllerState.msg
+  ActuatorInputs.msg
+  ControllerEnum.msg
+  JoystickEnum.msg
+  PidSettings.msg
+  RovAllocationEnum.msg
 )
 
 # Generate services
