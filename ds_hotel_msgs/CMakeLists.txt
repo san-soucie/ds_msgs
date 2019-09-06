@@ -56,6 +56,7 @@ add_message_files(
   HTPGL.msg
   BatMan.msg
   Battery.msg
+  ClioBattery.msg
   PWRdevice.msg
   PWR.msg
   XR.msg
@@ -68,8 +69,11 @@ add_service_files(
         DIRECTORY srv
    FILES
         AbortCmd.srv
+		BatteryCmd.srv
+		PowerCmd.srv
         PowerSupplyCommand.srv
 		ChargeCmd.srv
+		ClioChgCmd.srv
 )
 
 ## Generate actions in the 'action' folder
