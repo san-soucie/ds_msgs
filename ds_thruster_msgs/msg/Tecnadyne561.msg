@@ -35,8 +35,7 @@ float32 current_msb
 float32 current_lsb
 float32 footer_DLE
 
-######################
-# Write Digital Data #
-######################
-
-float32 ack
+#######################
+# ACK/NAK #
+#######################
+float64 ack
