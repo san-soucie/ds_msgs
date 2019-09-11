@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   sensor_msgs
   ds_core_msgs
+  ds_nmea_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -71,6 +72,8 @@ add_message_files(
       Velocity3D.msg
       NortekVectorSystem.msg
       Frequency.msg
+      PhinsStatus.msg
+      PhinsStdbin3.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -94,6 +97,7 @@ generate_messages(
   sensor_msgs
   geometry_msgs
   ds_core_msgs
+  ds_nmea_msgs
 )
 
 ################################################
