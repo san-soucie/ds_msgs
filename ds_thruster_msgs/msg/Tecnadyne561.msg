@@ -13,6 +13,8 @@ float32 stx
 float32 stn
 float32 cmd
 
+float32 thruster_addr
+
 #######################
 # Extended Status MSG #
 #######################
