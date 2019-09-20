@@ -6,9 +6,9 @@ ds_core_msgs/DsHeader ds_header
 Range3D[] ranges
 
 # Corrected range = (actual soundspeed)/(1500)*(original range)
-uint8 SOUNDSPEED_CORRECTION_NORMAL
+uint8 SOUNDSPEED_CORRECTION_NORMAL=0
 
 # Look this up in the manual
-uint8 SOUNDSPEED_CORRECTION_PHASEDARRAYDVL
+uint8 SOUNDSPEED_CORRECTION_PHASEDARRAYDVL=1
 
 uint8 soundspeed_correction_type
