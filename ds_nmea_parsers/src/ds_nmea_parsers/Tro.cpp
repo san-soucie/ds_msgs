@@ -57,8 +57,8 @@ bool from_string(Tro& output, const std::string& nmea_string){
   }
 
   if (roll_flag == 'B'){
-  } else if (roll_flag == 'T'){
     output.roll_deg = -output.roll_deg;
+  } else if (roll_flag == 'T'){
   } else {
     return false;
   }

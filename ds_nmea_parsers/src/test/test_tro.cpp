@@ -55,11 +55,11 @@ TEST(PHTRO, valid_strings)
       std::list<std::pair<std::string, ds_nmea_msgs::Tro>>{
           {
               "$PHTRO,1.71,M,0.47,T*4C\r\n",
-              gen(1.71, -0.47, 0x4C)
+              gen(1.71, 0.47, 0x4C)
           },
           {
               "$PHTRO,1.79,M,0.41,T*42\r\n",
-              gen(1.79, -0.41, 0x42)
+              gen(1.79, 0.41, 0x42)
           }
       };
 
