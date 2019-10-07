@@ -7,3 +7,6 @@ ds_core_msgs/DsHeader ds_header
 # Position
 float64 shift_northing
 float64 shift_easting
+
+# Negate the shift so it behaves like MC when applied to nav
+bool shift_like_mc

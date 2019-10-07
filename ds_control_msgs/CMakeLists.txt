@@ -26,6 +26,7 @@ add_message_files(
   FILES
   BottomFollow1D.msg
   GoalLegState.msg
+  GoalLegLatLon.msg
   ExternalBottomFollowAlarm.msg
   ExternalBottomFollowTimedOverride.msg
   RovAutoState.msg
@@ -51,16 +52,13 @@ generate_messages(
  ds_core_msgs
  geometry_msgs
  control_msgs
+ ds_nav_msgs
 )
 
 catkin_package(
    CATKIN_DEPENDS message_generation std_msgs ds_core_msgs geometry_msgs control_msgs
  ds_nav_msgs
  geometry_msgs
-)
-
-catkin_package(
-   CATKIN_DEPENDS message_generation std_msgs ds_core_msgs ds_nav_msgs geometry_msgs
 )
 
 ###########
