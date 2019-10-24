@@ -51,17 +51,19 @@ add_message_files(
    DIRECTORY msg
    FILES
    MultibeamRaw.msg
+   NorbitMB.msg
    MultibeamGrid.msg
    MultibeamGridStats.msg
    MultibeamFilterStats.msg
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
+add_service_files(
+        DIRECTORY srv
+    FILES
+        NorbitCmd.srv
 #   Service2.srv
-# )
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
