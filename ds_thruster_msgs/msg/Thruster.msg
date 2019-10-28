@@ -7,7 +7,7 @@ ds_core_msgs/DsHeader ds_header
 #######################
 # Extended Status MSG #
 #######################
-
+float64 checksum
 float64 speed_loop_enable_status
 float64 minute_tag
 float64 second_tag
