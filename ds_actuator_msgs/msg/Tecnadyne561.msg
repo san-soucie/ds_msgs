@@ -8,34 +8,34 @@ ds_core_msgs/DsHeader ds_header
 # Thruster Header #
 ###################
 
-float32 dle
-float32 stx
-float32 stn
-float32 cmd
+uint32 dle
+uint32 stx
+uint32 stn
+uint32 cmd
 
 #######################
 # Extended Status MSG #
 #######################
-float32 checksum
-float32 speed_loop_enable_status
-float32 minute_tag
-float32 second_tag
-float32 microsecond_tick_tag
-float32 prop_dir
-float32 prop_pwm
-float32 tach_msb
-float32 tach_lsb
-float32 fault_status
-float32 reset_status
-float32 speed_loop_interval
-float32 tach_err_count
-float32 voltage_msb
-float32 voltage_lsb
-float32 current_msb
-float32 current_lsb
-float32 footer_DLE
+uint32 checksum
+uint32 speed_loop_enable_status
+uint32 minute_tag
+uint32 second_tag
+uint32 microsecond_tick_tag
+uint32 prop_dir
+uint32 prop_pwm
+uint32 tach_msb
+uint32 tach_lsb
+uint32 fault_status
+uint32 reset_status
+uint32 speed_loop_interval
+uint32 tach_err_count
+uint32 voltage_msb
+uint32 voltage_lsb
+uint32 current_msb
+uint32 current_lsb
+uint32 footer_DLE
 
 #######################
 # ACK/NAK #
 #######################
-float64 ack
+uint64 ack
