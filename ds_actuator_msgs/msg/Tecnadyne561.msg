@@ -21,7 +21,7 @@ uint32 speed_loop_enable_status
 uint32 minute_tag
 uint32 second_tag
 uint32 microsecond_tick_tag
-uint32 prop_dir
+int32 prop_dir
 uint32 prop_pwm
 uint32 tach_msb
 uint32 tach_lsb
