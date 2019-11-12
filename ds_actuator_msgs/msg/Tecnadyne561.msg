@@ -25,17 +25,15 @@ int32 prop_dir
 uint32 prop_pwm
 uint32 tach_msb
 uint32 tach_lsb
+uint32 tach_rpm
 uint32 fault_status
 uint32 reset_status
 uint32 speed_loop_interval
 uint32 tach_err_count
 uint32 voltage_msb
 uint32 voltage_lsb
+uint32 voltage_volts
 uint32 current_msb
 uint32 current_lsb
+float32 current_amps
 uint32 footer_DLE
-
-#######################
-# ACK/NAK #
-#######################
-uint64 ack
