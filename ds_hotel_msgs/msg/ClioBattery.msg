@@ -41,6 +41,7 @@ uint16 maxCellTemp
 uint16 minCellTemp
 uint16 switchTemp
 float32 totalVoltage #V
+float32 totalTemperature # deg C
 bool charging
 bool discharging
 int32 countUsed
