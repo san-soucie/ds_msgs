@@ -15,6 +15,9 @@ string powerswitchState
 uint16 chargetimeRemaining
 uint16 chargetimeMax
 
+ClioBatteryPack[] packs
+
+# Per-pack
 uint16 temperature # deg C
 uint16 voltage # V
 uint16 current
@@ -22,8 +25,8 @@ uint16 avgCurrent
 uint16 maxError
 uint16 relativeSOC # percent
 uint16 absoluteSOC # percent
-uint16 countCapacity # Amp*hours
-uint16 fullCapacity # Amp*hours
+uint16 countCapacity # Remaining capacity in Amp*hours
+uint16 fullCapacity # Predicted capacity when fully charged in Amp*hours
 uint16 status
 uint16 countCycle
 uint16 capacityDesign
@@ -34,9 +37,14 @@ uint16 mid1CellVoltage
 uint16 mid2CellVoltage
 uint16 minCellVoltage
 
+
+
 ## Calculated
 float32[] voltages #V
 uint16[] temperatures #deg C
+uint16[] packCurrents
+uint16[] packDates
+uint16[] packSerNums
 uint16 maxCellTemp
 uint16 minCellTemp
 uint16 switchTemp
