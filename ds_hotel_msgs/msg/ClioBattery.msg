@@ -16,28 +16,7 @@ uint16 chargetimeRemaining
 uint16 chargetimeMax
 
 ClioBatteryPack[] packs
-
-# Per-pack
-uint16 temperature # deg C
-uint16 voltage # V
-uint16 current
-uint16 avgCurrent
-uint16 maxError
-uint16 relativeSOC # percent
-uint16 absoluteSOC # percent
-uint16 countCapacity # Remaining capacity in Amp*hours
-uint16 fullCapacity # Predicted capacity when fully charged in Amp*hours
-uint16 status
-uint16 countCycle
-uint16 capacityDesign
-uint16 dateManufacture
-uint16 serialNumber
-uint16 maxCellVoltage
-uint16 mid1CellVoltage
-uint16 mid2CellVoltage
-uint16 minCellVoltage
-
-
+uint16 relativeSOC
 
 ## Calculated
 float32[] voltages #V
@@ -45,15 +24,24 @@ uint16[] temperatures #deg C
 uint16[] packCurrents
 uint16[] packDates
 uint16[] packSerNums
+uint16[] packSOC
 uint16 maxCellTemp
 uint16 minCellTemp
+uint16 minCellVoltage
+uint16 maxCellVoltage
 uint16 switchTemp
-float32 totalVoltage #V
+float32 moduleVoltage #V
+float32 moduleTemperature
+float32 moduleStatus
+float32 moduleCountCycle
 bool charging
 bool discharging
-int32 countUsed
-int32 countAvailable
-int32 calcCapacity
+uint16 countUsed
+uint16 countAvailable
+uint16 countCapacity
+uint16 fullCapacity
+uint16 capacityDesign
+uint16 calcCapacity
 float64 capacityCoulombs  # Capacity of this battery, in Amp*hours
 float64 capacityAh
 float64 chargeCoulombs    # Charge currently in the battery, in Amp*hours
