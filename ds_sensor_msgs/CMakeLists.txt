@@ -60,6 +60,7 @@ add_message_files(
       Dvl.msg
       Gyro.msg
       Ins.msg
+      MemsImu.msg
       NortekDF21.msg
       OxygenConcentration.msg
       PhinsStandard.msg
