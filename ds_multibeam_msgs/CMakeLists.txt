@@ -60,7 +60,10 @@ add_message_files(
 ## Generate services in the 'srv' folder
  add_service_files(
    FILES
-   NorbitCmd.srv
+   QueryCmd.srv
+   PingCmd.srv
+   PwrCmd.srv
+   SettingsCmd.srv
 #   Service2.srv
  )
 
