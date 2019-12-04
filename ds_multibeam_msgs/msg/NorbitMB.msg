@@ -4,14 +4,7 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# Header
-uint32 preamble
-uint32 data_type
-uint32 data_size
-uint32 version
-uint32 crc
-
-
+# Payload for all beams
 float32 snd_velocity
 float32 sample_rate
 uint32 num_beams
@@ -32,7 +25,9 @@ float32 swath_dir
 float32 swath_open
 float32 gate_tilt
 
+# Per Beam Information
 uint32[] sample_num
+uint32[] beam_distance
 float32[] angle
 uint16[] upper_gate
 uint16[] lower_gate
