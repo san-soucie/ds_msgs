@@ -6,38 +6,30 @@ ds_core_msgs/DsHeader ds_header
 
 uint16 busAddress
 uint16 version
-uint16 date
+string date
 uint16 startupCondition
 uint16 uptime
 uint16 overflowCount
 uint16 timeoutCount
-string powerswitchState
+uint16 powerswitchState
 uint16 chargetimeRemaining
 uint16 chargetimeMax
+uint16 moduleStatus # Bitwise OR of status fields from all batteries
 
 ClioBatteryPack[] packs
-uint16 relativeSOC
 
 ## Calculated
-float32 maxCellTemp
-float32 minCellTemp
+float32 maxPackTemp
+float32 minPackTemp
+float32 maxPackVoltage
+float32 minPackVoltage
 float32 minCellVoltage
 float32 maxCellVoltage
-float32 switchTemp
 float32 moduleVoltage #V
-float32 moduleTemperature
-float32 moduleStatus
-float32 moduleCountCycle
+bool chargeEnabled
 bool charging
 bool discharging
-uint16 countUsed
-uint16 countAvailable
-uint16 countCapacity
-uint16 fullCapacity
-uint16 capacityDesign
-uint16 calcCapacity
-float64 capacityCoulombs  # Capacity of this battery, in Amp*hours
-float64 capacityAh
-float64 chargeCoulombs    # Charge currently in the battery, in Amp*hours
-float64 chargeAh
-float64 percentFull       # Battery capacity as a percentage
+float32 remainingCapacity # Remaining capacity, in Amp Hours
+float32 fullCapacity # Predicted capacity when full, in Amp Hours
+float32 designCapacity # Design capacity, in Amp Hours
+float64 percentFull # Battery capacity as a percentage.  Local capacity
