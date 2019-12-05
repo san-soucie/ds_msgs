@@ -4,11 +4,18 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-# Payload for all beams
+# Per Ping Info
 float32 snd_velocity
 float32 sample_rate
 uint32 num_beams
-uint32 ping_number
+uint32 ping_num
+uint8 percent_good
+uint16 max_depth
+uint16 min_depth
+uint16 center_depth
+uint16 max_range
+uint16 min_range
+uint16 center_range
 float64 ping_time
 float64 time_net
 float32 ping_rate
