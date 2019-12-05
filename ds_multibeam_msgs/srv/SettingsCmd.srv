@@ -1,4 +1,4 @@
 string setting_name
-int8 setting_value
+int64 setting_value
 ---
 string command_sent
