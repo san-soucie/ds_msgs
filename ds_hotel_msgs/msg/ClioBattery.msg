@@ -19,17 +19,11 @@ ClioBatteryPack[] packs
 uint16 relativeSOC
 
 ## Calculated
-float32[] voltages #V
-uint16[] temperatures #deg C
-uint16[] packCurrents
-uint16[] packDates
-uint16[] packSerNums
-uint16[] packSOC
-uint16 maxCellTemp
-uint16 minCellTemp
-uint16 minCellVoltage
-uint16 maxCellVoltage
-uint16 switchTemp
+float32 maxCellTemp
+float32 minCellTemp
+float32 minCellVoltage
+float32 maxCellVoltage
+float32 switchTemp
 float32 moduleVoltage #V
 float32 moduleTemperature
 float32 moduleStatus
