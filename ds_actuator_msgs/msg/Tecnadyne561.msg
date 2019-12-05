@@ -13,7 +13,6 @@ uint8 cmd
 #######################
 # Extended Status MSG #
 #######################
-uint32 checksum
 uint8 speed_loop_enable_status
 uint8 minute_tag
 uint8 second_tag
