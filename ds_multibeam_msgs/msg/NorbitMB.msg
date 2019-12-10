@@ -34,7 +34,7 @@ float32 gate_tilt
 
 # Per Beam Information
 uint32[] sample_num
-uint32[] beam_distance
+float32[] beam_distance
 float32[] angle
 uint16[] upper_gate
 uint16[] lower_gate
