@@ -113,11 +113,8 @@ TEST(NMEA_TO_UTC_STR, rounding)
     const auto actual = ds_nmea_msgs::to_nmea_utc_str(t);
     
     // should have succeeded
-    ASSERT_EQ(expected, actual);
+    EXPECT_EQ(expected, actual);
   }
-  const auto now = ds_nmea_msgs::to_nmea_utc_str(ros::Time::now());
-  std::string not_this("NOT_THIS");
-  EXPECT_EQ(now, not_this);
 }
 
 TEST(TO_NMEA_LAT_STRING, pass)
