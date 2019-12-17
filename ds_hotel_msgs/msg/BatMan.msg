@@ -8,13 +8,13 @@ int32 num_bats
 
 float32 maxModuleVolt
 float32 minModuleVolt
-uint16 maxSwitchTemp
-uint16 minSwitchTemp
+float32 maxSwitchTemp
+float32 minSwitchTemp
 
 float32 maxCellVolt
 float32 minCellVolt
-uint16 maxCellTemp
-uint16 minCellTemp
+float32 maxCellTemp
+float32 minCellTemp
 
 float64 capacityCoulombs
 float64 capacityAh
