@@ -24,4 +24,7 @@ float64 percentFull
 
 float32[] moduleVolt
 float64[] moduleAh
+float64[] moduleCapacity
 float64[] modulePercent
+bool[] moduleDischarging
+bool[] moduleCharging
