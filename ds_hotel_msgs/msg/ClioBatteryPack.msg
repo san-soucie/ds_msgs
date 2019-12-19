@@ -13,8 +13,10 @@ float32 countCycle
 float32 capacityDesign
 string dateManufacture
 uint16 serialNumber
-float32 maxCellVoltage
+# high / mid / low refer to the arrangement of cells within 
+# the pack, NOT to which has the highest voltage
+float32 highCellVoltage
 float32 mid1CellVoltage
 float32 mid2CellVoltage
-float32 minCellVoltage
+float32 lowCellVoltage
 
