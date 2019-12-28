@@ -75,6 +75,10 @@ add_message_files(
       Frequency.msg
       PhinsStatus.msg
       PhinsStdbin3.msg
+      UbloxNav.msg
+      UbloxSignal.msg
+      UbloxSignals.msg
+      UbloxSurveyIn.msg
 )
 
 ## Generate services in the 'srv' folder
