@@ -78,6 +78,8 @@ add_message_files(
       UbloxNav.msg
       UbloxSignal.msg
       UbloxSignals.msg
+      UbloxSatellite.msg
+      UbloxSatellites.msg
       UbloxSurveyIn.msg
 )
 
