@@ -64,6 +64,7 @@ add_message_files(
    PingCmd.srv
    PwrCmd.srv
    SettingsCmd.srv
+   LoadXmlCmd.srv
 #   Service2.srv
  )
 
