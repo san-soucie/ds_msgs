@@ -51,6 +51,7 @@ add_message_files(
    DIRECTORY msg
    FILES
    MultibeamRaw.msg
+   NorbitMB.msg
    MultibeamGrid.msg
    MultibeamGridStats.msg
    MultibeamFilterStats.msg
