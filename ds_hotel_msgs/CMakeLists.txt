@@ -57,6 +57,7 @@ add_message_files(
   BatMan.msg
   Battery.msg
   ClioBattery.msg
+  ClioBatteryPack.msg
   PWRdevice.msg
   PWR.msg
   XR.msg

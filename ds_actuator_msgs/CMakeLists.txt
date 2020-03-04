@@ -52,6 +52,7 @@ add_message_files(
   FILES
     ServoCmd.msg
     ServoState.msg
+    Tecnadyne561.msg
     ThrusterCmd.msg
     ThrusterState.msg
     DropweightCmd.msg

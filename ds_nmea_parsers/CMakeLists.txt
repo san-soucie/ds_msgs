@@ -174,6 +174,12 @@ add_library(${PROJECT_NAME}
 
   include/${PROJECT_NAME}/util.h
   src/${PROJECT_NAME}/util.cpp
+
+  include/${PROJECT_NAME}/Inf.h
+  src/${PROJECT_NAME}/Inf.cpp
+
+  include/${PROJECT_NAME}/Tro.h
+  src/${PROJECT_NAME}/Tro.cpp
 )
 
 ## Add cmake target dependencies of the library
@@ -302,6 +308,12 @@ if(CATKIN_ENABLE_TESTING)
 
     catkin_add_gtest(test_util src/test/test_util.cpp)
     target_link_libraries(test_util ${PROJECT_NAME})
+
+    catkin_add_gtest(test_tro src/test/test_tro.cpp)
+    target_link_libraries(test_tro ${PROJECT_NAME})
+
+    catkin_add_gtest(test_inf src/test/test_inf.cpp)
+    target_link_libraries(test_inf ${PROJECT_NAME})
 endif(CATKIN_ENABLE_TESTING)
 
 ## Add folders to be run by python nosetests

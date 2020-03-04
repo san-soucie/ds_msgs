@@ -55,15 +55,19 @@ add_message_files(
    MultibeamGrid.msg
    MultibeamGridStats.msg
    MultibeamFilterStats.msg
+   NorbitMB.msg
 )
 
 ## Generate services in the 'srv' folder
-add_service_files(
-        DIRECTORY srv
-    FILES
-        NorbitCmd.srv
+ add_service_files(
+   FILES
+   QueryCmd.srv
+   PingCmd.srv
+   PwrCmd.srv
+   SettingsCmd.srv
+   LoadXmlCmd.srv
 #   Service2.srv
-)
+ )
 
 ## Generate actions in the 'action' folder
 # add_action_files(

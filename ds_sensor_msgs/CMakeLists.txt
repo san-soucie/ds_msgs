@@ -60,6 +60,7 @@ add_message_files(
       Dvl.msg
       Gyro.msg
       Ins.msg
+      MemsImu.msg
       NortekDF21.msg
       OxygenConcentration.msg
       PhinsStandard.msg
@@ -74,6 +75,12 @@ add_message_files(
       Frequency.msg
       PhinsStatus.msg
       PhinsStdbin3.msg
+      UbloxNav.msg
+      UbloxSignal.msg
+      UbloxSignals.msg
+      UbloxSatellite.msg
+      UbloxSatellites.msg
+      UbloxSurveyIn.msg
 )
 
 ## Generate services in the 'srv' folder

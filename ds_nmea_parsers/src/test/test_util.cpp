@@ -113,9 +113,8 @@ TEST(NMEA_TO_UTC_STR, rounding)
     const auto actual = ds_nmea_msgs::to_nmea_utc_str(t);
     
     // should have succeeded
-    ASSERT_EQ(expected, actual);
+    EXPECT_EQ(expected, actual);
   }
-  
 }
 
 TEST(TO_NMEA_LAT_STRING, pass)
