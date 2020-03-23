@@ -4,6 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-uint16[8] pwr_cmd
-
-PWRdevice[] devices
+string card_name
+string device_name
+string state
