@@ -6,4 +6,4 @@ ds_core_msgs/DsHeader ds_header
 
 string card_name
 string device_name
-string state
+string device_state
