@@ -4,6 +4,4 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-string card_name
-string device_name
-string device_state
+PwrSwitch[] pwr_devices

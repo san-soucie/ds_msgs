@@ -61,7 +61,8 @@ add_message_files(
   PWRdevice.msg
   PWR.msg
   PwrSwitch.msg
-  PWRSwitchNode.msg
+  PwrSwitchDevice.msg
+  PwrSwitchDeviceCmd.msg
   XR.msg
   XrSimState.msg
   A2D2.msg
