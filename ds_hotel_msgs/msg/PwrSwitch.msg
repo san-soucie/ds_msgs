@@ -4,4 +4,4 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-PwrSwitch[] pwr_devices
+PwrSwitchDevice[] pwr_devices
