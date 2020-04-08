@@ -2,4 +2,4 @@
 
 string card_name
 string device_name
-string device_state
+bool device_state

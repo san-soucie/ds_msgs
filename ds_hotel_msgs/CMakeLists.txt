@@ -61,7 +61,8 @@ add_message_files(
   PWRdevice.msg
   PWR.msg
   PwrSwitch.msg
-  PwrSwitchDevice.msg
+  PwrSwitchDevices.msg
+  PwrSwitchDeviceStatus.msg
   PwrSwitchDeviceCmd.msg
   XR.msg
   XrSimState.msg
