@@ -60,6 +60,10 @@ add_message_files(
   ClioBatteryPack.msg
   PWRdevice.msg
   PWR.msg
+  PwrSwitch.msg
+  PwrSwitchDevices.msg
+  PwrSwitchDeviceStatus.msg
+  PwrSwitchDeviceCmd.msg
   XR.msg
   XrSimState.msg
   A2D2.msg
@@ -73,6 +77,7 @@ add_service_files(
 		BatteryCmd.srv
 		PowerCmd.srv
         PowerSupplyCommand.srv
+		PwrSwitchCmd.srv
 		ChargeCmd.srv
 		ClioChgCmd.srv
 )
