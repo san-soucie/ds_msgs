@@ -29,7 +29,7 @@ struct seapath_binary_11_def {
   int16_t heading_rate; //+/-180°/s **WARNING** opposite of usual INS convention
   uint16_t status; //0x00AA invalid data, 0x0000 data valid
   uint16_t checksum; //computed up bytes 1-39
-};
+} __attribute__((packed));
 typedef struct seapath_binary_11_def seapath_binary_11;
 
 unsigned short blkcrc(unsigned char *bufptr, unsigned len) {

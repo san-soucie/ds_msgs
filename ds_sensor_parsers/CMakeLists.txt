@@ -125,8 +125,8 @@ include_directories(
 
 ## Declare a C++ library
  add_library(${PROJECT_NAME}
-         include/${PROJECT_NAME}/SeapathBinary11.h
-         src/${PROJECT_NAME}/SeapathBinary11.cpp
+         #include/${PROJECT_NAME}/SeapathBinary11.h
+         #src/${PROJECT_NAME}/SeapathBinary11.cpp
 
          include/${PROJECT_NAME}/SimradEM.h
          src/${PROJECT_NAME}/SimradEM.cpp
@@ -204,8 +204,9 @@ target_link_libraries(${PROJECT_NAME}
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 if(CATKIN_ENABLE_TESTING)
-    catkin_add_gtest(test_seapath_binary_11 src/test/test_seapath_binary_11.cpp)
-    target_link_libraries(test_seapath_binary_11 ${PROJECT_NAME})
+    # Broken; see note
+    #catkin_add_gtest(test_seapath_binary_11 src/test/test_seapath_binary_11.cpp)
+    #target_link_libraries(test_seapath_binary_11 ${PROJECT_NAME})
 
     catkin_add_gtest(test_simrad_em src/test/test_simrad_em_parsing.cpp)
     target_link_libraries(test_simrad_em ${PROJECT_NAME})

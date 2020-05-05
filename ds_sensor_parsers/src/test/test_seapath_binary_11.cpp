@@ -107,7 +107,7 @@ TEST(seapathEMTest, gyro_parse)
 
   const std::list<std::pair<std::vector<uint8_t>, ds_sensor_msgs::Gyro>> test_pairs = {
       {{113, 0, 0, 4, 255, 85, 227, 42, 46, 180, 32, 55, 61, 18, 0, 0, 0, 2, 0, 0, 0, 15, 255, 255, 0, 0, 0, 102, 255, 248, 184, 85, 0, 0, 0, 0, 0, 0, 0, 0, 28, 176},
-       list_to_gyro({0, 0, 0})} //,
+       list_to_gyro({71.719841, -4.9246969, 120.54567})} //,
   };
   for (const auto test_pair : test_pairs){
     auto raw_data = test_pair.first;
