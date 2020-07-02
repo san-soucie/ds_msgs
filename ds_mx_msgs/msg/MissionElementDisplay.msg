@@ -19,3 +19,5 @@ string ROLE_TRACKLINE_CURRENT="current_trackline"
 string ROLE_OPERATING_AREA="operating_area"
 
 string ROLE_GEOFENCE="geofence"
+string ROLE_LOITER="loiter"
+string ROLE_MANUAL="manual"
