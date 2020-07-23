@@ -80,6 +80,7 @@ add_service_files(
 		PwrSwitchCmd.srv
 		ChargeCmd.srv
 		ClioChgCmd.srv
+		TrigPrmCtrlCmd.srv
 )
 
 ## Generate actions in the 'action' folder
