@@ -1,3 +1,6 @@
-string call
+uint8 CHECK_PARAMS = 1
+
+uint8 command 
 ---
 bool matched_params
+string reason
