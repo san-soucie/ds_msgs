@@ -17,7 +17,7 @@ struct simrad_em_def{
   int16_t roll; // +/- 180 deg, lsb=0.01, + port up
   int16_t pitch; // +/- 180 deg, lsb=0.01 + bow up **WARNING** Opposite sign of INS usual convention
   int16_t heave; // +/- 10m lsb=0.01m + when INS goes up
-  int16_t heading; // 0-160 lsb=0.01deg
+  int32_t heading; // 0-160 lsb=0.01deg
 } __attribute__((packed));
 typedef struct simrad_em_def simrad_em;
 
