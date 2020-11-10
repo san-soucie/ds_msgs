@@ -14,6 +14,9 @@ bool timeoutWarn
 # Useful when you need to run two commands (e.g., address + command)
 bool forceNext
 
+# Send an error message on state transition guard condition check
+bool stateTransErr
+
 # Delay before sending the command, in milliseconds
 float32 delayBefore_ms
 

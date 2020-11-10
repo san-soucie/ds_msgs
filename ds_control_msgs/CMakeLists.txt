@@ -31,6 +31,7 @@ add_message_files(
   ExternalBottomFollowTimedOverride.msg
   RovAutoState.msg
   RovControllerState.msg
+  RovControlGoal.msg
   ActuatorInputs.msg
   ControllerEnum.msg
   JoystickEnum.msg
