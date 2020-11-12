@@ -37,6 +37,7 @@ add_message_files(
   JoystickEnum.msg
   PidSettings.msg
   RovAllocationEnum.msg
+  RovSwitchState.msg
 )
 
 # Generate services
