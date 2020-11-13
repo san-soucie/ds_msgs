@@ -56,6 +56,7 @@ add_message_files(
    MultibeamGridStats.msg
    MultibeamFilterStats.msg
    NorbitMB.msg
+   NorbitWC.msg
 )
 
 ## Generate services in the 'srv' folder
