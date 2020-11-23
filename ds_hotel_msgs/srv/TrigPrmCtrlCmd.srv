@@ -1,6 +1,13 @@
 uint8 CHECK_PARAMS = 1
+uint8 ENABLE_BOARD = 2
+uint8 DISABLE_BOARD = 3
+uint8 CONFIGURE_BOARD = 4
 
 uint8 command 
 ---
-bool matched_params
+uint8 BOARD_ENABLED = 1
+uint8 BOARD_DISABLED = 2
+
+bool is_successful
+uint8 action_done
 string reason
