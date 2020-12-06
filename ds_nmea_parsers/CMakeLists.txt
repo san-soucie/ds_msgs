@@ -180,6 +180,12 @@ add_library(${PROJECT_NAME}
 
   include/${PROJECT_NAME}/Tro.h
   src/${PROJECT_NAME}/Tro.cpp
+
+  include/${PROJECT_NAME}/PixseFogest.h
+  src/${PROJECT_NAME}/PixseFogest.cpp
+
+  include/${PROJECT_NAME}/PixseAccest.h
+  src/${PROJECT_NAME}/PixseAccest.cpp
 )
 
 ## Add cmake target dependencies of the library
