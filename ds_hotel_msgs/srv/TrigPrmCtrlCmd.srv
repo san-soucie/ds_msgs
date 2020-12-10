@@ -4,6 +4,8 @@ uint8 DISABLE_BOARD = 3
 uint8 CONFIGURE_BOARD = 4
 
 uint8 command 
+TriggerChannelConfig[] channels_to_change
+ds_core_msgs/KeyString[] global_params_to_change
 ---
 uint8 BOARD_ENABLED = 1
 uint8 BOARD_DISABLED = 2
