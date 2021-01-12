@@ -1,0 +1,6 @@
+uint8 PING_START=1
+int64 PING_DESTINATION
+int64 PING_PAYLOAD
+uint8 ping
+---
+string action

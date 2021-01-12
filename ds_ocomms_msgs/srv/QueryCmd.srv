@@ -1,0 +1,6 @@
+uint8 QUERY_START = 1
+int64 QUERY_DESTINATION
+int64 QUERY_PAYLOAD
+uint8 query
+---
+string action
