@@ -1,6 +1,4 @@
-uint8 PING_START=1
 string PING_DESTINATION
-
-uint8 ping
+string PING_PAYLOAD
 ---
 string action

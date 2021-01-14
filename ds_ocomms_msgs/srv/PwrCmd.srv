@@ -1,4 +1,4 @@
 string PWR_DESTINATION
-uint16 PWR_VAL
+string PWR_STATE_DESIRED
 ---
 string action
