@@ -1,3 +1,4 @@
-uint16 power
+string PWR_DESTINATION
+uint16 PWR_VAL
 ---
-string command_sent
+string action
