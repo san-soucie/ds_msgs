@@ -1,4 +1,4 @@
-string setting_name
-int64 setting_value
+string PARAM_DESTINATION
+string PARAM_PAYLOAD
 ---
-string command_sent
+string action
