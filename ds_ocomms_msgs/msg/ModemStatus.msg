@@ -4,11 +4,6 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
-uint8 data_dest
-uint8 data_source
-uint8 command 
-uint8 payload_length
-
 uint16 link_state
 string timestamp_date
 string timestamp_time
@@ -27,15 +22,6 @@ float32 hv_dac
 float32 dc_adc 
 float32 ac_adc 
 float32 backscatter_adc 
-float32 estimated_pwr 
-float32 aux_corr_val 
-float32 aux_hv_dac 
-float32 aux_ac_adc 
-float32 aux_dc_adc 
-float32 aux_backscatter_adc 
-float32 aux_estimated_pwr 
-float32 bit_err_rate_lock
-float32 bit_err_rate
 float32 gating_mode
 float32 read_reg_2
 float32 read_reg_3
