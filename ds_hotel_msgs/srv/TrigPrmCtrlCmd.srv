@@ -7,8 +7,7 @@ uint8 CONFIGURE_BOARD = 4
 uint8 command 
 
 # An array of objects representing desired changes to trigger board channels, for example: 
-# TriggerChannelConfig myconfig = {name : "Channel 0", 
-#channels_to_change:
+# TriggerChannelConfig myconfig = { 
 #- name: 'Channel 0'
 #  specified_params:
 #  - key: 'period'
@@ -18,15 +17,23 @@ uint8 command
 #- name: 'Channel 5'
 #  specified_params:
 #  - key: 'delays'
-#    value: '[250,500]'
+#    value: '[250,500]'}
 TriggerChannelConfig[] channels_to_change
 
-#global_params_to_change:
+# An array of KeyString pairs representing desired changes to global parameters on the trigger board
+# For example:
+#ds_core_msgs/KeyString myconfig = {
 #- key: 'sync'
 #  value: 'false'
 #- key: 'baudrate'
-#  value: '9600'
+#  value: '9600'}
 ds_core_msgs/KeyString[] global_params_to_change
+
+# A flag indicating whether the service caller wants to:
+# a) Just compare board parameters to the parameter server
+# or 
+# b) Compare board parameters to the parameter server and update the board to reflect the param server.
+bool apply
 ---
 # Constants signifying whether the board is triggering or secured (enums for action_done)
 uint8 BOARD_ENABLED = 1
