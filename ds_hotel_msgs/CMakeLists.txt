@@ -63,6 +63,7 @@ add_message_files(
   PwrSwitch.msg
   PwrSwitchDevices.msg
   PwrSwitchDeviceStatus.msg
+  TriggerChannelConfig.msg
   PwrSwitchDeviceCmd.msg
   XR.msg
   XrSimState.msg
@@ -80,6 +81,7 @@ add_service_files(
 		PwrSwitchCmd.srv
 		ChargeCmd.srv
 		ClioChgCmd.srv
+		TrigPrmCtrlCmd.srv
 )
 
 ## Generate actions in the 'action' folder
