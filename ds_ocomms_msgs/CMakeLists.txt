@@ -63,6 +63,7 @@ add_service_files(DIRECTORY srv
   PwrCmd.srv
   QueryCmd.srv
   SettingsCmd.srv
+  TransferCmd.srv
 )
 
 ## Generate actions in the 'action' folder
