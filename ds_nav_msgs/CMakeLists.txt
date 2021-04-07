@@ -66,6 +66,8 @@ add_service_files(
   DIRECTORY srv
   FILES
   ResetDvl.srv
+  ZuptCmd.srv
+  RejPolicyCmd.srv
 )
 
 ## Generate actions in the 'action' folder
