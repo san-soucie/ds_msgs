@@ -186,6 +186,12 @@ add_library(${PROJECT_NAME}
 
   include/${PROJECT_NAME}/PixseAccest.h
   src/${PROJECT_NAME}/PixseAccest.cpp
+
+  include/${PROJECT_NAME}/PixseConfig1Int.h
+  src/${PROJECT_NAME}/PixseConfig1Int.cpp
+
+  include/${PROJECT_NAME}/PixseConfig2Int.h
+  src/${PROJECT_NAME}/PixseConfig2Int.cpp
 )
 
 ## Add cmake target dependencies of the library

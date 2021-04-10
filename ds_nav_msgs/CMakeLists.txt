@@ -59,6 +59,8 @@ add_message_files(
   Shift.msg
   DeadReck.msg
   LatLon.msg
+  RejPolicyStatus.msg
+  ZuptStatus.msg
 )
 
 ## Generate services in the 'srv' folder
