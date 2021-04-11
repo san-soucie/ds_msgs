@@ -37,21 +37,22 @@ float64 dvl_time
 #################
 
 uint8 config
-float32[4] velocity
-float32[4] range
+uint8 coord_mode
+float64[4] velocity
+float64[4] range
 uint8 bottom_status
-float32[4] layer_velocity
-uint16 ref_layer_start
-uint16 ref_layer_end
+float64[4] layer_velocity
+float64 ref_layer_start
+float64 ref_layer_end
 uint8 ref_layer_status
 uint8 tofp_hour
 uint8 tofp_minute
 uint8 tofp_second
 uint8 tofp_hundreths
 uint16 bit_results
-uint32 sound_speed
-uint16 temperature
-uint8 salinity
+uint32 sound_vel
+float64 temperature
+float64 salinity
 float64 depth
 float64 pitch
 float64 roll
