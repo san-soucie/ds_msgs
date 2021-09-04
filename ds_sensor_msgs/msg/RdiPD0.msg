@@ -177,13 +177,33 @@ uint8[4] percent_good
 uint32 ref_min
 float32 ref_near
 float32 ref_far
-int32[4] ref_velocity
-uint32[4] ref_correlation
+float32[4] ref_velocity
+float32[4] ref_correlation
 float32[4] ref_intensity
 uint8[4] ref_percent_good
 uint16 depth_max
 uint32[4] rssi_amp      #Receiver Signal Strength indicator
 uint8 gain
+
+############################
+# Watertrack data          #
+############################
+float32[] bin_velocity_beam1
+float32[] bin_velocity_beam2
+float32[] bin_velocity_beam3
+float32[] bin_velocity_beam4
+float32[] bin_corrmag_beam1
+float32[] bin_corrmag_beam2
+float32[] bin_corrmag_beam3
+float32[] bin_corrmag_beam4
+float32[] bin_echoint_beam1
+float32[] bin_echoint_beam2
+float32[] bin_echoint_beam3
+float32[] bin_echoint_beam4
+float32[] bin_pctgood_beam1
+float32[] bin_pctgood_beam2
+float32[] bin_pctgood_beam3
+float32[] bin_pctgood_beam4
 
 ############################
 # High-resolution velocity #
