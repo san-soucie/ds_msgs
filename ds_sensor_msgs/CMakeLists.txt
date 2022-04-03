@@ -63,6 +63,7 @@ add_message_files(
       Ins.msg
       MemsImu.msg
       NortekDF21.msg
+      NortekDvlStatus.msg
       OxygenConcentration.msg
       PhinsStandard.msg
       RdiPD0.msg
