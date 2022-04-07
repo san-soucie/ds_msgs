@@ -84,6 +84,7 @@ add_message_files(
       UbloxSatellites.msg
       UbloxSurveyIn.msg
       RdiPD5.msg
+      WrapSensor.msg
 )
 
 ## Generate services in the 'srv' folder
