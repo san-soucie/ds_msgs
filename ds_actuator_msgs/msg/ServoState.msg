@@ -13,3 +13,6 @@ bool enable
 float32 actual_radians
 float32 cmd_radians
 
+float32 actual_counts
+float32 cmd_counts
+
