@@ -4,6 +4,8 @@
 std_msgs/Header header
 ds_core_msgs/DsHeader ds_header
 
+string wraps_date
+string wraps_time
 float64 wraps_counter
 float64 wraps_heading
 
